@@ -1,0 +1,11 @@
+body{
+    background: black;
+}
+
+.main-carousel{
+    width: 100vw !important;
+}
+
+.main-nav{
+    height: 3em;
+}
