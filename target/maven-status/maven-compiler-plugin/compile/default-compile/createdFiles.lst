@@ -2,8 +2,11 @@ dashboard\ChartInteractiveView1.class
 dashboard\ChartLinelView1.class
 dashboard\ChartBarView.class
 gestion\UsuarioGestion.class
+gestion\UsuarioGestion2.class
 controller\ReporteController.class
 model\Usuario.class
+model\Usuario2.class
+controller\UsuarioController_dos.class
 dashboard\ChartDonutView1.class
 dashboard\ChartMeterGaugeView2$1.class
 com\sc403\sistemaj\resources\JavaEE8Resource.class
@@ -29,6 +32,7 @@ model\Estudiante.class
 dashboard\ChartAreaView.class
 model\Prospecto.class
 dashboard\ChartOhlcView1.class
+model\Cita.class
 controller\EstudianteController.class
 dashboard\ChartDateView.class
 dashboard\ChartDonuView2.class
