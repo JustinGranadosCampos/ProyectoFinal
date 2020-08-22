@@ -27,7 +27,7 @@ public class CitaGestion {
                         datos.getString(6),/*apellidoP*/
                         datos.getString(7),/*nombreProvincia*/
                         datos.getString(8),/*nombreMedico*/
-                        datos.getString(9)/*desc_provincia*/
+                        datos.getString(9)/*desc_servicio*/
                 ));
             }
         } catch (SQLException ex) {

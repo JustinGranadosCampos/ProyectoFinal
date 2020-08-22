@@ -8,10 +8,13 @@ E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\sr
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartDonuView2.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartLinelView1.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartBubbleView1.java
+E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\controller\UsuarioSistemaController.java
+E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\gestion\CitaGestion.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\controller\UsuarioController.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartPieView2.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartLivePieView.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\model\YearGender.java
+E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\controller\CitaController.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\model\Usuario.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartDonutView1.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartInteractiveView1.java
@@ -32,7 +35,6 @@ E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\sr
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\model\Cita.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartAreaView.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartPieView1.java
-E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\controller\UsuarioController_dos.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\model\Prospecto.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartMeterGaugeView2.java
 E:\Justin Granados\Documents\Ufidelitas\2020\Progra 3\ProyectoFinal\ProyectoF\src\main\java\dashboard\ChartBarView.java

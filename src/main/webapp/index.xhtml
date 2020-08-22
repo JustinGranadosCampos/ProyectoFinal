@@ -14,7 +14,7 @@
             <b:container fluid="true">
                 <b:column medium-screen="3"></b:column>
                 <b:panel title="Login" look="primary" class="panel-heading">
-                    <b:row tooltip="Usuario ya registrado!.">
+                    <b:row>
                         <b:column medium-screen="2">
                             <h:outputLabel value="Usuario" for="usuario"/>
                         </b:column>
@@ -24,7 +24,7 @@
                                          label="Usuario"
                                          required="true"
                                          autocomplete="false"
-                                         value="#{usuarioController.idUsuario}">
+                                         value="#{usuarioSistemaController.nombreUsuario}">
                                 <f:facet name="preend">
                                     <b:icon name="user"/>
                                 </f:facet>
@@ -44,7 +44,7 @@
                                            label="Clave"
                                            required="true"
                                            autocomplete="false"
-                                           value="#{usuarioController.pwUsuario}">
+                                           value="#{usuarioSistemaController.pwUsuario}">
                                 <f:facet name="preend">
                                     <b:iconAwesome name="key"/>
                                 </f:facet>
@@ -58,7 +58,7 @@
                         <b:column medium-screen="2"/>
                         <b:column medium-screen="4">
                             <b:commandButton value="Login"
-                                             action="#{usuarioController.valida()}"
+                                             action="#{usuarioSistemaController.inicarSesion()}"
                                              look="primary"
                                              style="width: 100%"
                                              class="btn-loginP"/>

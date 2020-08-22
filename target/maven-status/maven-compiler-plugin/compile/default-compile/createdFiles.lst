@@ -6,7 +6,7 @@ gestion\UsuarioGestion2.class
 controller\ReporteController.class
 model\Usuario.class
 model\Usuario2.class
-controller\UsuarioController_dos.class
+controller\CitaController.class
 dashboard\ChartDonutView1.class
 dashboard\ChartMeterGaugeView2$1.class
 com\sc403\sistemaj\resources\JavaEE8Resource.class
@@ -20,6 +20,7 @@ dashboard\ChartMeterGaugeView1.class
 gestion\ProspectoGestion.class
 dashboard\ChartBubbleView2.class
 dashboard\ChartOhlcView2.class
+gestion\CitaGestion.class
 dashboard\ChartPieView2.class
 dashboard\ChartMeterGaugeView2.class
 model\YearGender.class
@@ -29,6 +30,7 @@ dashboard\ChartZoomView.class
 dashboard\ChartLineView2.class
 dashboard\ChartBubbleView1.class
 model\Estudiante.class
+controller\UsuarioSistemaController.class
 dashboard\ChartAreaView.class
 model\Prospecto.class
 dashboard\ChartOhlcView1.class

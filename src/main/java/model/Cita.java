@@ -19,7 +19,7 @@ public class Cita {
     private String nombrePaciente;
     private String nombreProvincia;
     private String nombreMedico;
-    private String desc_provincia;
+    private String desc_servicio;
     private String sede;
 
     public Cita() {
@@ -40,15 +40,15 @@ public class Cita {
     }
     
     /*Constructor para la vista citas*/
-    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_provincia) {
+    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_servicio) {
         this.cod_cita = cod_cita;
         this.fecha_cita = fecha_cita;
         this.hora_cita = hora_cita;
         this.sede = sede;
-        this.nombrePaciente = nombreP + apellidoP;
+        this.nombrePaciente = nombreP +" "+ apellidoP;
         this.nombreProvincia = nombreProvincia;
         this.nombreMedico = nombreMedico;
-        this.desc_provincia = desc_provincia;
+        this.desc_servicio = desc_servicio;
     }
     
     public int getCod_cita() {
@@ -137,5 +137,45 @@ public class Cita {
 
     public void setId_servicio(int id_servicio) {
         this.id_servicio = id_servicio;
+    }
+
+    public String getNombrePaciente() {
+        return nombrePaciente;
+    }
+
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
+    }
+
+    public String getNombreProvincia() {
+        return nombreProvincia;
+    }
+
+    public void setNombreProvincia(String nombreProvincia) {
+        this.nombreProvincia = nombreProvincia;
+    }
+
+    public String getNombreMedico() {
+        return nombreMedico;
+    }
+
+    public void setNombreMedico(String nombreMedico) {
+        this.nombreMedico = nombreMedico;
+    }
+
+    public String getDesc_servicio() {
+        return desc_servicio;
+    }
+
+    public void setDesc_servicio(String desc_servicio) {
+        this.desc_servicio = desc_servicio;
+    }
+
+    public String getSede() {
+        return sede;
+    }
+
+    public void setSede(String sede) {
+        this.sede = sede;
     }
 }

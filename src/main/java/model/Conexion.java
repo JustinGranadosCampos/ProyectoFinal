@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class Conexion {
 
     private static Conexion conexion;
-    private static final String DBURL = "jdbc:derby://localhost:1527/ugeneral";
+    private static final String DBURL = "jdbc:derby://localhost:1527/prueba";//"jdbc:mysql://localhost:3306/new_project?autoReconnect=true&useSSL=false";//"jdbc:derby://localhost:1527/ugeneral";/*jdbc:mysql://localhost:3306/project?autoReconnect=true&useSSL=false*/
     private static Connection conn;
 
     private Conexion() {

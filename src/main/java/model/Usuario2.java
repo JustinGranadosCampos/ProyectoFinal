@@ -6,9 +6,18 @@ public class Usuario2 {
     private String pwUsuario;
     private String nombreUsuario;
     private String idRol;
+    
+    /*Variables para vista sesion*/
+    private String desc_rol;
 
     public Usuario2() {
 
+    }
+    
+    public Usuario2(String nombreUsuario, String pwUsuario, String desc_rol) {
+        this.nombreUsuario = nombreUsuario;
+        this.pwUsuario = pwUsuario;
+        this.desc_rol = desc_rol;
     }
 
     public Usuario2(String idUsuario, String pwUsuario, String nombreUsuario, String idRol) {
@@ -50,4 +59,11 @@ public class Usuario2 {
         this.idRol = idRol;
     }
 
+    public String getDesc_rol() {
+        return desc_rol;
+    }
+
+    public void setDesc_rol(String desc_rol) {
+        this.desc_rol = desc_rol;
+    }
 }
