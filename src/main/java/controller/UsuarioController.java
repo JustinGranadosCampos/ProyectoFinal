@@ -40,7 +40,8 @@ public class UsuarioController extends Usuario implements Serializable {
         }
     }
     
-     public void cerrarSesion() {
+     public String cerrarSesion() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "index.xhtml";
     }
 }

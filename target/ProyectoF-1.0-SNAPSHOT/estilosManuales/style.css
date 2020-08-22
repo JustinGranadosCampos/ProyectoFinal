@@ -330,5 +330,15 @@ footer p{
 } */
 
 .panel-primary > .panel-heading{
-    background: var(--orange-bg-color) !important;
+    background: var(--orange-bg-color);
+}
+
+.btn-loginP{
+    background: var(--green-bg-color);
+}
+
+.btn-loginP:hover{
+    color: var(--green-bg-color);
+    background: #fff;
+    border: 1px solid var(--green-bg-color);
 }

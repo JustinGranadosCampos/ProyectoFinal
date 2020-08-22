@@ -46,7 +46,7 @@
                         </b:dropMenu>
                         <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
                             <!--<b:navLink value="Perfil"  href="#"/>-->
-                            <b:navLink value="Cerrar Sesion"  actionListener="#{usuarioController.cerrarSesion()}" action="index?faces-redirect=true"/>
+                            <b:commandLink value="Cerrar Sesion"  href="#{usuarioController.cerrarSesion()}"/>
                         </b:dropMenu>
                     </b:navbarLinks>
                 </b:navBar>
