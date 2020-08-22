@@ -10,79 +10,43 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet  library="css" name="default.css"/>
         <h:outputStylesheet library="css" name="cssLayout.css"/>
-        <title>Sistema 1.0</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <title>Administración</title>
     </h:head>
     <h:body>
         <div id="top" class="top">
             <ui:insert name="top">
-                <b:navBar class="nav" fluid="true" brand="Sistema"
-                          brand-href="/SistemaJ/faces/principal.xhtml">                    
+                <b:navBar class="nav" fluid="true" brand="Administración"
+                          brand-href="/ProyectoF/faces/principal.xhtml">                    
                     <b:navbarLinks>
-                        <b:image library="images" name="Logo.png" style="height: 75px"/>
+                        <b:image library="img" name="manzana-roja.png" style="height: 75px"/>
                     </b:navbarLinks>
                     <b:navbarLinks>
-                        <b:dropMenu value="Estudiantes" icon-awesome="fa-group">
-                            <b:navLink value="Gestión" icon-awesome="fa-newspaper-o" href="/SistemaJ/faces/estudiante/list.xhtml"/>
-                            <b:navLink value="Certificación" iconAwesome="fa-print" href="/SistemaJ/faces/reportes/certificacion.xhtml"/>
-                            <b:dropMenu value='Dashboard'  icon-awesome='gamepad' iconAlign="right">                            
-                                <b:navLink value="01 Area"  href="/SistemaJ/faces/dashboard/grafico01.xhtml"/>                                
-                                <b:navLink value="02 Barras"  href="/SistemaJ/faces/dashboard/grafico02.xhtml"/>
-                                <b:navLink value="03 Burbujas"  href="/SistemaJ/faces/dashboard/grafico03.xhtml"/>
-                                <b:navLink value="04 Donas"  href="/SistemaJ/faces/dashboard/grafico04.xhtml"/>
-                                <b:navLink value="05 Lineas"  href="/SistemaJ/faces/dashboard/grafico05.xhtml"/>
-                                <b:navLink value="06 Pie"  href="/SistemaJ/faces/dashboard/grafico06.xhtml"/>
-                                <b:navLink value="07 Meter Gauge"  href="/SistemaJ/faces/dashboard/grafico07.xhtml"/>
-                                <b:navLink value="08 OHLC"  href="/SistemaJ/faces/dashboard/grafico08.xhtml"/>
-                                <b:navLink value="09 Animated"  href="/SistemaJ/faces/dashboard/grafico09.xhtml"/>
-                                <b:navLink value="10 Interactive"  href="/SistemaJ/faces/dashboard/grafico10.xhtml"/>
-                                <b:navLink value="11 Date"  href="/SistemaJ/faces/dashboard/grafico11.xhtml"/>
-                                <b:navLink value="12 Zoon"  href="/SistemaJ/faces/dashboard/grafico12.xhtml"/>
-                                <b:navLink value="13 Live"  href="/SistemaJ/faces/dashboard/grafico13.xhtml"/>
-                            </b:dropMenu>                           
+                        <b:dropMenu value="Clientes" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cliente/cliente_gestion.xhtml"/>                        
                         </b:dropMenu>
-                        <b:dropMenu value="Prospectos" icon-awesome="fa-group">
-                            <b:navLink value="Registro" icon-awesome="fa-newspaper-o" href="/SistemaJ/faces/prospecto/registro.xhtml"/>
-                            <b:navLink value="Reporte" icon-awesome="fa-newspaper-o" href="/SistemaJ/faces/prospecto/reporte.xhtml"/>
-                            <b:navLink value="Json" icon-awesome="fa-newspaper-o" href="/SistemaJ/faces/prospecto/prospecto_json.xhtml"/>
+                        <b:dropMenu value="Citas" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cita/cita_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Usuarios" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Usuario" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Reportes" icon-awesome="fa-group">
+                            <b:navLink value="Reporte Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                            <b:navLink value="Reporte Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                            <b:navLink value="Reporte Usuarios" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
                         </b:dropMenu>
                         <b:dropMenu value="Respaldos" icon-awesome="fa-group">
-                            <b:navLink value="Estudiantes" icon-awesome="fa-print" href="/SistemaJ/faces/respaldo/respaldo.xhtml"/>
+                            <b:navLink value="Estudiantes" icon-awesome="fa-print" href="/ProyectoF/faces/respaldo/respaldo.xhtml"/>
                         </b:dropMenu>
-                        <b:navLink value="Cliente 01"  href="/SistemaJ/faces/cliente1.xhtml"/>
-                        <b:navLink value="Cliente 02"  href="/SistemaJ/faces/cliente2.xhtml"/>
                     </b:navbarLinks>
                     <b:navbarLinks pull="right" style-class="hidden-xs">
                         <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-group">
                             <b:navLink value="Actualizar" icon-awesome="fa-newspaper-o" href="#"/>
                         </b:dropMenu>
                         <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
-                            <b:navLink value="Perfil"  href="#"/>
-                            <b:navLink value="Cerrar Sesion"  href="#"/>
-                            <b:navLink value="Temas">
-                                <h:form style="display: inline" styleClass="form-inline">
-                                    <b:selectOneMenu value="#{temaController.tema}"
-                                                     style="width: 180px; margin-top: 8px;"
-                                                     onchange="$('.theme-selector-button').click()">
-                                        <f:selectItem itemValue="default" itemLabel="default"/>
-                                        <f:selectItem itemValue="patternfly" itemLabel="patternfly"/>
-                                        <f:selectItem itemValue="cerulean" itemLabel="cerulean"/>
-                                        <f:selectItem itemValue="cosmo" itemLabel="cosmo"/>
-                                        <f:selectItem itemValue="cyborg" itemLabel="cyborg"/>
-                                        <f:selectItem itemValue="flatly" itemLabel="flatly"/>
-                                        <f:selectItem itemValue="journal" itemLabel="journal"/>
-                                        <f:selectItem itemValue="lumen" itemLabel="lumen"/>
-                                        <f:selectItem itemValue="paper" itemLabel="paper"/>
-                                        <f:selectItem itemValue="sandstone" itemLabel="sandstone"/>
-                                        <f:selectItem itemValue="simplex" itemLabel="simplex"/>
-                                        <f:selectItem itemValue="slate" itemLabel="slate"/>
-                                        <f:selectItem itemValue="spacelab" itemLabel="spacelab"/>
-                                        <f:selectItem itemValue="superhero" itemLabel="superhero"/>
-                                        <f:selectItem itemValue="united" itemLabel="united"/>
-                                        <f:selectItem itemValue="yeti" itemLabel="yeti"/>                                
-                                    </b:selectOneMenu> 
-                                    <b:commandButton class="theme-selector-button" value="select" style="display: none"/>
-                                </h:form> 
-                            </b:navLink>
+                            <!--<b:navLink value="Perfil"  href="#"/>-->
+                            <b:navLink value="Cerrar Sesion"  actionListener="#{usuarioController.cerrarSesion()}" action="index?faces-redirect=true"/>
                         </b:dropMenu>
                     </b:navbarLinks>
                 </b:navBar>

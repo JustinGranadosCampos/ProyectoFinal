@@ -11,6 +11,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 import model.Usuario;
 
 /**
@@ -38,5 +39,8 @@ public class UsuarioController extends Usuario implements Serializable {
             return "index.xhtml";
         }
     }
-
+    
+     public void cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+    }
 }

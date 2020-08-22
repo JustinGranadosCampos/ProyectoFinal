@@ -7,11 +7,13 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Autenticación</title>
+        <link rel="stylesheet" href="../estilosManuales/style.css"/>
     </h:head>
     <h:body>
         <h:form id="loginForm">
             <b:container fluid="true">
-                <b:panel title="Login" look="primary">
+                <b:column medium-screen="3"></b:column>
+                <b:panel title="Login" look="primary" class="panel-heading">
                     <b:row tooltip="Usuario ya registrado!.">
                         <b:column medium-screen="2">
                             <h:outputLabel value="Usuario" for="usuario"/>
@@ -32,17 +34,17 @@
                             <b:message for="usuario"/>
                         </b:column>                        
                     </b:row>
-                     <b:row tooltip="El password no se lee por seguridad.">
+                    <b:row tooltip="El password no se lee por seguridad.">
                         <b:column medium-screen="2">
                             <h:outputLabel value="Clave"/>
                         </b:column>
                         <b:column medium-screen="4">
                             <b:inputSecret placeholder="Clave"
-                                         id="clave"
-                                         label="Clave"
-                                         required="true"
-                                         autocomplete="false"
-                                         value="#{usuarioController.pwUsuario}">
+                                           id="clave"
+                                           label="Clave"
+                                           required="true"
+                                           autocomplete="false"
+                                           value="#{usuarioController.pwUsuario}">
                                 <f:facet name="preend">
                                     <b:iconAwesome name="key"/>
                                 </f:facet>
@@ -62,6 +64,7 @@
                         </b:column>
                     </b:row>   
                 </b:panel>
+                <b:column medium-screen="3"></b:column>
             </b:container>
         </h:form>
     </h:body>
