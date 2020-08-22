@@ -2,14 +2,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Principal</title>
     </h:head>
     <h:body>
         <ui:composition template="./resources/templates/plantilla.xhtml">
             <ui:define name="content">
-                <h1>Bienvenido ${usuarioController.nombreUsuario}</h1>
+                <h1>Bienvenido(a) ${usuarioController.nombreUsuario}</h1>
+                <h:form>
+                    <b:dataTable value="#{estudianteController.estudiantes}"
+                                 var="estudiante"
+                                 excel="true"
+                                 pdf="true"
+                                 csv="true"
+                                 print="true"
+                                 copy="true"
+                                 columnVisibility="true">
+                        <b:dataTableColumn value="#{estudiante.id}"
+                                           label="Código Cita"
+                                           width="9%"/>
+                        <b:dataTableColumn value="#{estudiante.nombre}"
+                                           label="Fecha Cita"
+                                           width="15%"/>
+                        <b:dataTableColumn value="#{estudiante.apellido1}"
+                                           label="Hora"
+                                           width="19%"/>
+                        <b:dataTableColumn value="#{estudiante.apellido2}"
+                                           label="Paciente"
+                                           width="19%"/>
+                        <b:dataTableColumn value="#{estudiante.fechaNaci}"
+                                           label="Provincia P."
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{estudiante.fechaIngr}"
+                                           label="Sede"
+                                           width="10%"/>
+                        <b:dataTableColumn style="text-align: center"
+                                           value="#{estudiante.genero}"
+                                           width="8%"
+                                           label="Médico"/>
+                        <b:dataTableColumn style="text-align: center"
+                                           width="10%"
+                                           label="Servicio"/>
+                        <b:dataTableColumn style="text-align: center"
+                                           width="10%"
+                                           label="Accion">
+                            <b:commandButton value="Editar"
+                                             action="#{estudianteController.edita(estudiante.id)}"/>
+
+                        </b:dataTableColumn>
+                    </b:dataTable>
+                </h:form>
             </ui:define>
         </ui:composition>
     </h:body>
