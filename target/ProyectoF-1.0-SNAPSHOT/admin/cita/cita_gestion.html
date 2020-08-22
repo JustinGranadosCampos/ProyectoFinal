@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../css/gestion.css">
+        <link rel="shortcut icon" href="#">
+        <title>Gestión Citas</title>
+    </head>
+
+    <body>
+        <div class="container main-container">
+            <div class="container-fluid">
+                <h3 class="text-center text-light">Gestionar Citas</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-submit">Agregar Citas</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table id="tablaCliente"
+                                   class="tablaCliente table table-striped table-bordered table-condensed style="width:100%">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Primer apellido</th>
+                                        <th>Segundo apellido</th>
+                                        <th>Tel&eacute;fono</th>
+                                        <th>Correo</th>
+                                        <th>C&eacute;dula</th>
+                                        <th>Provincia</th>
+                                        <th>Direcci&oacute;n</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="text-center">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-success btnEditar">Editar</button>
+                                                    <button class="btn btn-danger btnEliminar">Eliminar</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLable"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form id="formClientes">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombre" class="col-form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="pApellido" class="col-form-label">Primer apellido</label>
+                                <input type="text" class="form-control" id="pApellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="sApellido" class="col-form-label">Segundo apellido</label>
+                                <input type="text" class="form-control" id="sApellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="col-form-label">Tel&eacute;fono</label>
+                                <input type="tel" class="form-control" id="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="col-form-label">Correo</label>
+                                <input type="email" class="form-control" id="correo">
+                            </div>
+                            <div class="form-group">
+                                <label for="cedula" class="col-form-label">C&eacute;dula</label>
+                                <input type="text" class="form-control" id="cedula">
+                            </div>
+                            <div class="form-group">
+                                <label for="provincia" class="col-form-label">Provincia</label>
+                                <input type="text" class="form-control" id="provincia">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="col-form-label">Direcci&oacute;n</label>
+                                <input type="text" class="form-control" id="direccion">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-dark" id="btnGuardar">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    </body>
+
+</html>

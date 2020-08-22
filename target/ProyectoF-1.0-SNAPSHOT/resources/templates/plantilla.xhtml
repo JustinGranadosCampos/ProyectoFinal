@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet  library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <title>Administración</title>
+    </h:head>
+    <h:body>
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <b:navBar class="nav" fluid="true" brand="Administración"
+                          brand-href="/ProyectoF/faces/principal.xhtml">                    
+                    <b:navbarLinks>
+                        <b:image library="img" name="manzana-roja.png" style="height: 75px"/>
+                    </b:navbarLinks>
+                    <b:navbarLinks>
+                        <b:dropMenu value="Clientes" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cliente/cliente_gestion.xhtml"/>                        
+                        </b:dropMenu>
+                        <b:dropMenu value="Citas" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cita/cita_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Usuarios" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Usuario" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Reportes" icon-awesome="fa-group">
+                            <b:navLink value="Reporte Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                            <b:navLink value="Reporte Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                            <b:navLink value="Reporte Usuarios" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Respaldos" icon-awesome="fa-group">
+                            <b:navLink value="Estudiantes" icon-awesome="fa-print" href="/ProyectoF/faces/respaldo/respaldo.xhtml"/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
+                    <b:navbarLinks pull="right" style-class="hidden-xs">
+                        <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-group">
+                            <b:navLink value="Actualizar" icon-awesome="fa-newspaper-o" href="#"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
+                            <!--<b:navLink value="Perfil"  href="#"/>-->
+                            <b:navLink value="Cerrar Sesion"  actionListener="#{usuarioController.cerrarSesion()}" action="index?faces-redirect=true"/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
+                </b:navBar>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="content" class="center_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>
