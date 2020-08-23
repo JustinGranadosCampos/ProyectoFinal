@@ -23,10 +23,12 @@ dashboard\ChartOhlcView2.class
 gestion\CitaGestion.class
 dashboard\ChartPieView2.class
 dashboard\ChartMeterGaugeView2.class
+gestion\PacienteGestion.class
 model\YearGender.class
 com\sc403\sistemaj\JAXRSConfiguration.class
 controller\TemaController.class
 dashboard\ChartZoomView.class
+model\Paciente.class
 dashboard\ChartLineView2.class
 dashboard\ChartBubbleView1.class
 model\Estudiante.class
