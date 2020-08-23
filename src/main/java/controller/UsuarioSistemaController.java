@@ -18,17 +18,10 @@ import javax.servlet.http.HttpSession;
 import model.Usuario2;
 import static org.castor.mapping.AbstractMappingLoaderFactory.LOG;
 
-/**
- *
- * @author Justin Granados
- */
 @Named(value = "usuarioSistemaController")
 @SessionScoped
 public class UsuarioSistemaController extends Usuario2 implements Serializable {
 
-    /**
-     * Creates a new instance of UsuarioSistemaController
-     */
     public UsuarioSistemaController() {
     }
     

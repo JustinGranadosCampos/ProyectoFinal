@@ -30,6 +30,7 @@ controller\TemaController.class
 dashboard\ChartZoomView.class
 model\Paciente.class
 dashboard\ChartLineView2.class
+controller\PacienteController.class
 dashboard\ChartBubbleView1.class
 model\Estudiante.class
 controller\UsuarioSistemaController.class
