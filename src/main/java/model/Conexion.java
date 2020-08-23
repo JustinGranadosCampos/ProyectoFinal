@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.lang.reflect.InvocationTargetException;
@@ -12,20 +7,18 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author User
- */
 public class Conexion {
 
     private static Conexion conexion;
-    private static final String DBURL = "jdbc:derby://localhost:1527/prueba";//"jdbc:mysql://localhost:3306/new_project?autoReconnect=true&useSSL=false";//"jdbc:derby://localhost:1527/ugeneral";/*jdbc:mysql://localhost:3306/project?autoReconnect=true&useSSL=false*/
+    private static final String DBURL = "jdbc:mysql://localhost:3306/new_project?autoReconnect=true&useSSL=false";//"jdbc:derby://localhost:1527/prueba";//"jdbc:mysql://localhost:3306/new_project?autoReconnect=true&useSSL=false";//"jdbc:derby://localhost:1527/ugeneral";/*jdbc:mysql://localhost:3306/project?autoReconnect=true&useSSL=false*/
     private static Connection conn;
 
     private Conexion() {
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver").getDeclaredConstructor().newInstance();
-            conn = DriverManager.getConnection(DBURL, "root", "root");
+            Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
+//            Class.forName("org.apache.derby.jdbc.ClientDriver").getDeclaredConstructor().newInstance();
+            conn = DriverManager.getConnection(DBURL, "root", "123456");
+//            conn = DriverManager.getConnection(DBURL, "root", "root");
         } catch (ClassNotFoundException | SQLException | InstantiationException
                 | IllegalAccessException | NoSuchMethodException | SecurityException
                 | IllegalArgumentException

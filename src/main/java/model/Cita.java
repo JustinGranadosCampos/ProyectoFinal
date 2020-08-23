@@ -41,7 +41,7 @@ public class Cita {
     }
     
     /*Constructor para la vista citas*/
-    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_servicio, String cedula) {
+    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String cedula, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_servicio) {
         this.cod_cita = cod_cita;
         this.fecha_cita = fecha_cita;
         this.hora_cita = hora_cita;

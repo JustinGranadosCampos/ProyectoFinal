@@ -23,12 +23,12 @@ public class CitaGestion {
                         datos.getDate(2),/*fecha*/
                         datos.getDate(3),/*hora*/
                         datos.getString(4),/*sede*/
-                        datos.getString(5),/*nombreP*/
-                        datos.getString(6),/*apellidoP*/
-                        datos.getString(7),/*nombreProvincia*/
-                        datos.getString(8),/*nombreMedico*/
-                        datos.getString(9),/*desc_servicio*/
-                        datos.getString(10)/*cedula*/
+                        datos.getString(5),/*cedula*/
+                        datos.getString(6),/*nombreP*/
+                        datos.getString(7),/*apellidoP*/
+                        datos.getString(8),/*nombreProvincia*/
+                        datos.getString(9),/*nombreMedico*/
+                        datos.getString(10)/*desc_servicio*/
                 ));
             }
         } catch (SQLException ex) {
