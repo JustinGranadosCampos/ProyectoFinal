@@ -21,36 +21,35 @@
                                  copy="true"
                                  columnVisibility="true">
                         <b:dataTableColumn value="#{cita.cod_cita}"
-                                           label="Código Cita"
-                                           width="9%"/>
+                                           label="Codigo"
+                                           width="10%"/>
                         <b:dataTableColumn value="#{cita.fecha_cita}"
-                                           label="Fecha Cita"
-                                           width="15%"/>
+                                           label="F.Cita"
+                                           width="10%"/>
                         <b:dataTableColumn value="#{cita.hora_cita}"
-                                           label="Hora"
-                                           width="19%"/>
-                        <b:dataTableColumn value="#{cita.nombrePaciente}"
-                                           label="Paciente"
-                                           width="19%"/>
-                        <b:dataTableColumn value="#{cita.nombreProvincia}"
-                                           label="Provincia P."
+                                           label="H.Cita"
                                            width="10%"/>
                         <b:dataTableColumn value="#{cita.sede}"
                                            label="Sede"
                                            width="10%"/>
                         <b:dataTableColumn style="text-align: center"
-                                           value="#{cita.nombreMedico}"
-                                           width="8%"
-                                           label="Médico"/>
-                        <b:dataTableColumn style="text-align: center"
+                                           value="#{cita.cedula}"
                                            width="10%"
-                                           value="#{cita.desc_servicio}"
-                                           label="Servicio"/>
+                                           label="Cedula"/>
+                        <b:dataTableColumn value="#{cita.nombrePaciente}"
+                                           label="Paciente"
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{cita.nombreProvincia}"
+                                           label="Provincia"
+                                           width="10%"/>
+                        <b:dataTableColumn style="text-align: center"
+                                           value="#{cita.nombreMedico}"
+                                           width="10%"
+                                           label="Medico"/>
                         <b:dataTableColumn style="text-align: center"
                                            width="10%"
                                            label="Accion">
-                            <b:commandButton value="Editar"/>
-
+                            <b:commandButton value="Procesar"/>
                         </b:dataTableColumn>
                     </b:dataTable>
                 </h:form>
@@ -58,4 +57,3 @@
         </ui:composition>
     </h:body>
 </html>
-

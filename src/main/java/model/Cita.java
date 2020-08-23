@@ -21,6 +21,7 @@ public class Cita {
     private String nombreMedico;
     private String desc_servicio;
     private String sede;
+    private String cedula;
 
     public Cita() {
     }
@@ -40,7 +41,7 @@ public class Cita {
     }
     
     /*Constructor para la vista citas*/
-    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_servicio) {
+    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, String sede, String nombreP, String apellidoP, String nombreProvincia, String nombreMedico, String desc_servicio, String cedula) {
         this.cod_cita = cod_cita;
         this.fecha_cita = fecha_cita;
         this.hora_cita = hora_cita;
@@ -49,6 +50,7 @@ public class Cita {
         this.nombreProvincia = nombreProvincia;
         this.nombreMedico = nombreMedico;
         this.desc_servicio = desc_servicio;
+        this.cedula = cedula;
     }
     
     public int getCod_cita() {
@@ -177,5 +179,13 @@ public class Cita {
 
     public void setSede(String sede) {
         this.sede = sede;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 }

@@ -11,6 +11,7 @@
         <h:outputStylesheet  library="css" name="default.css"/>
         <h:outputStylesheet library="css" name="cssLayout.css"/>
         <h:outputStylesheet library="css" name="style.css"/>
+        <!--<h:outputScript library="js" name="main.js" />-->
         <title>Administración</title>
     </h:head>
     <h:body>
@@ -42,9 +43,9 @@
                         </b:dropMenu>
                     </b:navbarLinks>
                     <b:navbarLinks pull="right" style-class="hidden-xs">
-                        <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-group">
+<!--                        <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-group">
                             <b:navLink value="Actualizar" icon-awesome="fa-newspaper-o" href="#"/>
-                        </b:dropMenu>
+                        </b:dropMenu>-->
                         <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
                             <!--<b:navLink value="Perfil"  href="#"/>-->
                             <b:commandLink value="Cerrar Sesion"  href="#{usuarioController.cerrarSesion()}"/>

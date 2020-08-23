@@ -10,7 +10,7 @@ import model.Cita;
 import model.Conexion;
 
 public class CitaGestion {
-    private static final String SQL_SELECT_V_CITAS = "SELECT * FROM v_citas";
+    private static final String SQL_SELECT_V_CITAS = "SELECT * FROM V_CITAS";
     
     public static ArrayList<Cita> mostrarListaCitas() {
         ArrayList<Cita> lista = new ArrayList<>();
@@ -27,14 +27,13 @@ public class CitaGestion {
                         datos.getString(6),/*apellidoP*/
                         datos.getString(7),/*nombreProvincia*/
                         datos.getString(8),/*nombreMedico*/
-                        datos.getString(9)/*desc_servicio*/
+                        datos.getString(9),/*desc_servicio*/
+                        datos.getString(10)/*cedula*/
                 ));
             }
         } catch (SQLException ex) {
             Logger.getLogger(EstudianteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return lista;
-
     }
 }
