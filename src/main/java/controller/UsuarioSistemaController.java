@@ -10,6 +10,8 @@ import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
+//import javax.enterprise.context.ApplicationScoped;
 import javax.faces.FacesException;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
@@ -22,9 +24,14 @@ import static org.castor.mapping.AbstractMappingLoaderFactory.LOG;
 @SessionScoped
 public class UsuarioSistemaController extends Usuario2 implements Serializable {
 
+    @PostConstruct
+    void initialiseSession() {
+        FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+    }
+
     public UsuarioSistemaController() {
     }
-    
+
     public String inicarSesion() {
         Usuario2 usuario = UsuarioGestion2.valida(this.getNombreUsuario(), this.getPwUsuario());
         if (usuario != null) {
@@ -39,25 +46,24 @@ public class UsuarioSistemaController extends Usuario2 implements Serializable {
             return "index.xhtml";
         }
     }
-    
-     public String cerrarSesion() {
-         FacesContext fc = FacesContext.getCurrentInstance();
+
+    public String cerrarSesion() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+
+        // invalidate session
+	ExternalContext ec = fc.getExternalContext();
+	HttpSession session = (HttpSession) ec.getSession(false);
+	session.invalidate();
 	
-	// invalidate session
-//	ExternalContext ec = fc.getExternalContext();
-//	HttpSession session = (HttpSession) ec.getSession(false);
-//	session.invalidate();
-//	
-	// redirect to the login / home page
-//	try {
-//	    ec.redirect("../../index.xhtml");
-//	} catch (IOException e) {
-//	    LOG.error("Redirect to the login page failed");
-//	    throw new FacesException(e);
-//	}
-	
-//	return null;
-        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "../../index.xhtml";
+//         redirect to the login / home page
+	try {
+	    ec.redirect("../../index.xhtml");
+	} catch (IOException e) {
+	    LOG.error("Redirect to the login page failed");
+	    throw new FacesException(e);
+	}
+	return null;
+//        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+//        return "../../index.xhtml";
     }
 }

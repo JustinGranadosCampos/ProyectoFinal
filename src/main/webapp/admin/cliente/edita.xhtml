@@ -3,16 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Estudiantes</title>
+        <title>Edición de cliente</title>
     </h:head>
     <h:body>
-        <ui:composition template="./../resources/templates/plantilla.xhtml">
+        <ui:composition template="./../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
-                <h:form id="editaEstudianteForm">
+                <h:form id="editaPacienteForm">
                     <b:container fluid="true">
-                        <b:panel title="Estudiantes" look="primary">
+                        <b:panel title="Paciente" look="primary">
                             <b:row tooltip="La identificacion no se modifica">
                                 <b:column medium-screen="2">
                                     <h:outputLabel value="Identificacion" for="identificacion"/>
@@ -20,7 +21,7 @@
                                 <b:column medium-screen="4">
                                     <b:inputText placeholder="Identificacion"
                                                  id="identificacion"
-                                                 value="#{estudianteController.id}"/>
+                                                 value="#{pacienteController.id_paciente}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="identificacion"/>
@@ -35,10 +36,25 @@
                                                  id="nombre"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.nombre}"/>
+                                                 value="#{pacienteController.primer_nombre}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="nombre"/>
+                                    <b:message for="snombre"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Segundo Nombre:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Segundo Nombre"
+                                                 id="snombre"
+                                                 required="false"
+                                                 autocomplete="false"
+                                                 value="#{pacienteController.segundo_nombre}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="snombre"/>
                                 </b:column>
                             </b:row>
                             <b:row>
@@ -50,7 +66,7 @@
                                                  id="apellido1"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.apellido1}"/>
+                                                 value="#{pacienteController.apellido1}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="apellido1"/>
@@ -65,11 +81,81 @@
                                                  id="apellido2"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.apellido2}"/>
+                                                 value="#{pacienteController.apellido2}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="apellido2"/>
                                 </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Telefono:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Telefono"
+                                                 id="telefono"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{pacienteController.telefono}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="cedula"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Correo:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Cédula"
+                                                 id="cedula"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 mask="number"
+                                                 value="#{pacienteController.cedula}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="cedula"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:formGroup>
+                                    <b:selectOneMenu value="#{pacienteController.id_distrito}" colMd="2" required="true"
+                                                     select2="true">
+                                        <f:selectItem itemLabel="(Seleccione uno)" itemValue="" />
+                                        <f:selectItem itemLabel="Legua" itemValue="1" />
+                                        <f:selectItem itemLabel="Legua" itemValue="2" />
+                                        <f:selectItem itemLabel="Legua" itemValue="3" />
+                                    </b:selectOneMenu>
+                                    <b:message for="@previous" colMd="2" />
+                                    <!--<b:inputText value="#{selectOneMenuBean.brand}" disabled="true" colMd="4" label="Last submitted value:" labelColMd="2" />-->
+                                </b:formGroup>
+                            </b:row>
+                            <b:row>
+                                <b:formGroup>
+                                    <b:selectOneMenu value="#{pacienteController.id_canton}" colMd="2" required="true"
+                                                     select2="true">
+                                        <f:selectItem itemLabel="(Seleccione uno)" itemValue="" />
+                                        <f:selectItem itemLabel="Legua" itemValue="1" />
+                                        <f:selectItem itemLabel="Honda" itemValue="2" />
+                                        <f:selectItem itemLabel="Opel" itemValue="3" />
+                                    </b:selectOneMenu>
+                                    <b:message for="@previous" colMd="2" />
+                                    <!--<b:inputText value="#{selectOneMenuBean.brand}" disabled="true" colMd="4" label="Last submitted value:" labelColMd="2" />-->
+                                </b:formGroup>
+                            </b:row>
+                            <b:row>
+                                <b:formGroup>
+                                    <b:selectOneMenu value="#{pacienteController.id_provincia}" colMd="2" required="true"
+                                                     select2="true">
+                                        <f:selectItem itemLabel="(Seleccione uno)" itemValue="" />
+                                        <f:selectItem itemLabel="San José" itemValue="1" />
+                                        <f:selectItem itemLabel="Alajuela" itemValue="2" />
+                                        <f:selectItem itemLabel="Cartago" itemValue="3" />
+                                    </b:selectOneMenu>
+                                    <b:message for="@previous" colMd="2" />
+                                    <!--<b:inputText value="#{selectOneMenuBean.brand}" disabled="true" colMd="4" label="Last submitted value:" labelColMd="2" />-->
+                                </b:formGroup>
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
@@ -80,7 +166,7 @@
                                         id="fechaNaci"
                                         required="true"
                                         requiredMessage="Se requiere la F. de Nacimiento"
-                                        value="#{estudianteController.fechaNaci}"/>
+                                        value="#{pacienteController.fecha_nacimiento}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="fechaNaci"/>
@@ -88,33 +174,66 @@
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Fecha de Ingreso:"/>
+                                    <h:outputText value="Peso:"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:datepicker 
-                                        id="fechaIngr"
-                                        required="true"
-                                        requiredMessage="Se requiere la F. de Ingreso"
-                                        value="#{estudianteController.fechaIngr}"/>
+                                    <b:inputText placeholder="Peso"
+                                                 id="peso"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 mask="decimal"
+                                                 value="#{pacienteController.peso}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="fechaIngr"/>
+                                    <b:message for="peso"/>
                                 </b:column>
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputLabel value="Genero" for="genero"/>
+                                    <h:outputText value="Estatura:"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Masculino"
-                                                   itemValue="M"/>
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Femenino"
-                                                   itemValue="F"/>
+                                    <b:inputText placeholder="Estatura"
+                                                 id="estatura"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 mask="decimal"
+                                                 value="#{pacienteController.peso}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="genero"/>
+                                    <b:message for="estatura"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Grasa Corporal:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Grasa Corporal"
+                                                 id="grasaCorp"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 mask="decimal"
+                                                 value="#{pacienteController.grasaCorp}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="grasaCorp"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Citura:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Citura"
+                                                 id="citura"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 mask="decimal"
+                                                 value="#{pacienteController.cintura}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="citura"/>
                                 </b:column>
                             </b:row>
                             <b:row>
@@ -123,17 +242,17 @@
                                     <b:commandButton value="Ingresar"
                                                      look="primary"
                                                      style="width: 33%"
-                                                     action="#{estudianteController.inserta()}">                                        
+                                                     action="#{pacienteController.inserta()}">                                        
                                     </b:commandButton>
                                     <b:commandButton value="Actualizar"
                                                      look="success"
                                                      style="width: 33%"
-                                                     action="#{estudianteController.modifica()}">                                        
+                                                     action="#{pacienteController.modifica()}">                                        
                                     </b:commandButton>
                                     <b:commandButton value="Eliminar"
                                                      look="danger"
                                                      style="width: 33%"
-                                                     action="#{estudianteController.elimina()}">                                        
+                                                     action="#{pacienteController.elimina()}">                                        
                                     </b:commandButton>
                                 </b:column>
                             </b:row>
