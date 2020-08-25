@@ -3,9 +3,12 @@ package model;
 public class Usuario2 {
 
     private String idUsuario;
+    private String nombreCompleto;
     private String pwUsuario;
     private String nombreUsuario;
     private String idRol;
+    private String telefono;
+    private String direccion;
     
     /*Variables para vista sesion*/
     private String desc_rol;
@@ -13,6 +16,19 @@ public class Usuario2 {
     public Usuario2() {
 
     }
+    
+    /*Insersión de datos ID,NombreCompleto,Clave,ID_Rol,Telefono,Direccion,NombreUsuario*/
+
+    public Usuario2(String idUsuario, String nombreCompleto, String pwUsuario, String idRol, String telefono, String direccion, String nombreUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombreCompleto = nombreCompleto;
+        this.pwUsuario = pwUsuario;
+        this.idRol = idRol;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.nombreUsuario = nombreUsuario;
+    }
+    
     
     public Usuario2(String nombreUsuario, String pwUsuario, String desc_rol) {
         this.nombreUsuario = nombreUsuario;
