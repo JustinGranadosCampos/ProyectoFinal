@@ -5,14 +5,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
-        <title>Estudiantes</title>
+        <title>Usuarios</title>
     </h:head>
     <h:body>
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
-                <h:form id="editaEstudianteForm">
+                <h:form id="editaUsuarioForm">
                     <b:container fluid="true">
-                        <b:panel title="Estudiantes" look="primary">
+                        <b:panel title="Usuarios" look="primary">
                             <b:row tooltip="La identificacion no se modifica">
                                 <b:column medium-screen="2">
                                     <h:outputLabel value="Identificacion" for="identificacion"/>
@@ -20,7 +20,7 @@
                                 <b:column medium-screen="4">
                                     <b:inputText placeholder="Identificacion"
                                                  id="identificacion"
-                                                 value="#{estudianteController.id}"/>
+                                                 value="#{usuarioSistemaController.id_usuario}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="identificacion"/>
@@ -35,7 +35,7 @@
                                                  id="nombre"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.nombre}"/>
+                                                 value="#{usuarioSistemaController.nombreCompleto}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="nombre"/>
@@ -43,80 +43,84 @@
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Primer Apellido:"/>
+                                    <h:outputText value="ID ROL"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:inputText placeholder="Apellido1"
-                                                 id="apellido1"
+                                    <b:inputText placeholder="ID ROL"
+                                                 id="idRol"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.apellido1}"/>
+                                                 value="#{usuarioSistemaController.id_rol}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="apellido1"/>
+                                    <b:message for="idRol"/>
                                 </b:column>
                             </b:row>
+                            
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Segundo Apellido:"/>
+                                    <h:outputText value="Telefono"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:inputText placeholder="Apellido2"
-                                                 id="apellido2"
+                                    <b:inputText placeholder="Telefono"
+                                                 id="telefono"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{estudianteController.apellido2}"/>
+                                                 value="#{usuarioSistemaController.telefono}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="apellido2"/>
+                                    <b:message for="telefono"/>
                                 </b:column>
                             </b:row>
+                            
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Fecha de Nacimiento:"/>
+                                    <h:outputText value="Direccion"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:datepicker 
-                                        id="fechaNaci"
-                                        required="true"
-                                        requiredMessage="Se requiere la F. de Nacimiento"
-                                        value="#{estudianteController.fechaNaci}"/>
+                                    <b:inputText placeholder="Direccion"
+                                                 id="direccion"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.direccion}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="fechaNaci"/>
+                                    <b:message for="direccion"/>
                                 </b:column>
                             </b:row>
+                            
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Fecha de Ingreso:"/>
+                                    <h:outputText value="Usuario"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:datepicker 
-                                        id="fechaIngr"
-                                        required="true"
-                                        requiredMessage="Se requiere la F. de Ingreso"
-                                        value="#{estudianteController.fechaIngr}"/>
+                                    <b:inputText placeholder="Usuario"
+                                                 id="usuario"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.nombreUsuario}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="fechaIngr"/>
+                                    <b:message for="usuario"/>
                                 </b:column>
                             </b:row>
+                            
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputLabel value="Genero" for="genero"/>
+                                    <h:outputText value="Clave"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Masculino"
-                                                   itemValue="M"/>
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Femenino"
-                                                   itemValue="F"/>
+                                    <b:inputText placeholder="Clave"
+                                                 id="clave"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.pwUsuario}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="genero"/>
+                                    <b:message for="clave"/>
                                 </b:column>
                             </b:row>
+                            
                             <b:row>
                                 <b:column medium-screen="2"/>
                                 <b:column medium-screen="4">

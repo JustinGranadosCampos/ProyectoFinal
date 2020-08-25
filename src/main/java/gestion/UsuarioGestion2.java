@@ -15,8 +15,8 @@ public class UsuarioGestion2 {
     private static final String SQL_SELECT_V_USUARIO_SESION = "Select * from usuario_sesion where NOMBRE_USUARIO=?";
     private static final String SQL_SELECT_USUARIOS = "SELECT * FROM USUARIO_SISTEMA";
     private static final String SQL_SELECT_USUARIO = "SELECT * FROM USUARIO_SISTEMA WHERE ID_USUARIO=?";
-    private static final String SQL_INSERT_USUARIO = "INSERT INTO USUARIO_SISTEMA() VALUES()";
-    private static final String SQL_UPDATE_USUARIO = "UPDATE USUARIO_SISTEMA SET ";
+    private static final String SQL_INSERT_USUARIO = "INSERT INTO USUARIO_SISTEMA(NOMBRE_COMPLETO,CLAVE,ID_ROL,TELEFONO,DIRECCION,NOMBRE_USUARIO) VALUES(?,?,?,?,?,?)";
+    private static final String SQL_UPDATE_USUARIO = "UPDATE USUARIO_SISTEMA SET NOMBRE_COMPLETO=?,CLAVE=?,ID_ROL=?,TELEFONO=?,DIRECCION=?,NOMBRE_USUARIO=? WHERE ID_USUARIO=?";
     private static final String SQL_DELETE_USUARIO = "DELETE FROM USUARIO_SISTEMA WHERE ID_USUARIO=?";
 
     public static Usuario2 valida(String nombreUsuario, String pwUsuario) {

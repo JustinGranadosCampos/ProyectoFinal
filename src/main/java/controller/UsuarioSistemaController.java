@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import gestion.UsuarioGestion2;
@@ -10,8 +5,9 @@ import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.List;
 import javax.annotation.PostConstruct;
-//import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.FacesException;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
@@ -21,13 +17,14 @@ import model.Usuario2;
 import static org.castor.mapping.AbstractMappingLoaderFactory.LOG;
 
 @Named(value = "usuarioSistemaController")
-@SessionScoped
+//@SessionScoped
+@RequestScoped
 public class UsuarioSistemaController extends Usuario2 implements Serializable {
 
-    @PostConstruct
-    void initialiseSession() {
-        FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-    }
+//    @PostConstruct
+//    void initialiseSession() {
+//        FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+//    }
 
     public UsuarioSistemaController() {
     }
@@ -45,6 +42,10 @@ public class UsuarioSistemaController extends Usuario2 implements Serializable {
             FacesContext.getCurrentInstance().addMessage("loginForm:usuario", msg);
             return "index.xhtml";
         }
+    }
+    
+    public List<Usuario2> getUsuarios() {
+        return UsuarioGestion2.getUsuarios();
     }
 
     public String cerrarSesion() {
@@ -66,4 +67,57 @@ public class UsuarioSistemaController extends Usuario2 implements Serializable {
 //        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 //        return "../../index.xhtml";
     }
+    
+    public String edita(int id) {/*Boton de editar*/
+        Usuario2 usuario = UsuarioGestion2.getUsuario(id);
+        if (usuario != null) {
+            this.setId_usuario(usuario.getId_usuario());
+            this.setNombreCompleto(usuario.getNombreCompleto());
+            this.setPwUsuario(usuario.getPwUsuario());
+            this.setId_rol(usuario.getId_rol());
+            this.setTelefono(usuario.getTelefono());
+            this.setDireccion(usuario.getDireccion());
+            this.setNombreUsuario(usuario.getNombreUsuario());
+            return "edita.xhtml";
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                    "Posiblemente identificacion ya no exista");
+            FacesContext.getCurrentInstance().addMessage("editaUsuarioForm:identificacion", msg);
+            return "usuario_gestion.xhtml";
+        }
+    }
+    
+    public String inserta() {
+        if (UsuarioGestion2.insertar(this)) {
+            return "usuario_gestion.xhtml";
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                    "Posiblemente identificacion duplicada");
+            FacesContext.getCurrentInstance().addMessage("editaUsuarioForm:identificacion", msg);
+            return "edita.xhtml";
+        }
+    }
+
+    public String modifica() {
+        if (UsuarioGestion2.modificar(this)) {
+            return "usuario_gestion.xhtml";
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                    "Posiblemente identificacion duplicada");
+            FacesContext.getCurrentInstance().addMessage("editaUsuarioForm:identificacion", msg);
+            return "edita.xhtml";
+        }
+    }
+
+    public String elimina() {
+        if (UsuarioGestion2.eliminar(this)) {
+            return "usuario_gestion.xhtml";
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                    "Posiblemente identificacion ya no exista");
+            FacesContext.getCurrentInstance().addMessage("editaUsuarioForm:identificacion", msg);
+            return "edita.xhtml";
+        }
+    }
+    
 }
