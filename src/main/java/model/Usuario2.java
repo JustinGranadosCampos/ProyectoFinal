@@ -12,6 +12,8 @@ public class Usuario2 {
     
     /*Variables para vista sesion*/
     private String desc_rol;
+    private int id_usuario;
+    private int id_rol;
 
     public Usuario2() {
 
@@ -19,11 +21,11 @@ public class Usuario2 {
     
     /*Insersión de datos ID,NombreCompleto,Clave,ID_Rol,Telefono,Direccion,NombreUsuario*/
 
-    public Usuario2(String idUsuario, String nombreCompleto, String pwUsuario, String idRol, String telefono, String direccion, String nombreUsuario) {
-        this.idUsuario = idUsuario;
+    public Usuario2(int id_usuario, String nombreCompleto, String pwUsuario, int id_rol, String telefono, String direccion, String nombreUsuario) {
+        this.id_usuario = id_usuario;
         this.nombreCompleto = nombreCompleto;
         this.pwUsuario = pwUsuario;
-        this.idRol = idRol;
+        this.id_rol = id_rol;
         this.telefono = telefono;
         this.direccion = direccion;
         this.nombreUsuario = nombreUsuario;
@@ -81,5 +83,45 @@ public class Usuario2 {
 
     public void setDesc_rol(String desc_rol) {
         this.desc_rol = desc_rol;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public int getId_rol() {
+        return id_rol;
+    }
+
+    public void setId_rol(int id_rol) {
+        this.id_rol = id_rol;
     }
 }
