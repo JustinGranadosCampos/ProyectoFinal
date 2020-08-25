@@ -34,13 +34,13 @@ public class UsuarioSistemaController extends Usuario2 implements Serializable {
         if (usuario != null) {
 //            this.setNombreUsuario(usuario.getNombreUsuario());
             this.setDesc_rol(usuario.getDesc_rol());
-            return "principal";
+            return "principal?faces-redirect=true";
         } else {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
                     "Usuario y/o contraseña invalidas");
             FacesContext.getCurrentInstance().addMessage("loginForm:clave", msg);
             FacesContext.getCurrentInstance().addMessage("loginForm:usuario", msg);
-            return "index.xhtml";
+            return "index?faces-redirect=true";
         }
     }
     

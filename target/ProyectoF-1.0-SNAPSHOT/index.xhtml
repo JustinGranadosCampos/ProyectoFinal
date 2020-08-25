@@ -9,7 +9,7 @@
         <title>Autenticación</title>
         <link rel="stylesheet" href="../estilosManuales/style.css"/>
     </h:head>
-    <h:body>
+    <h:body onload="limpiarForm()">
         <h:form id="loginForm">
             <b:container fluid="true">
                 <b:column medium-screen="3"></b:column>
@@ -65,7 +65,10 @@
         <script type="text/javascript">
             function limpiarForm()
             {
-                document.getElementById("loginForm").reset();
+                var boxUsuario = document.getElementById('usuario');
+                var boxClave = document.getElementById('clave');
+                boxClave.value = "";
+                boxUsuario.value = "";
             }
         </script>
     </h:body>
