@@ -50,7 +50,7 @@ public class Paciente {
 
     public Paciente(int id_paciente, String primer_nombre, String segundo_nombre, String apellido1, String apellido2, String telefono, String correo, String cedula, Date fecha_nacimiento, double peso, double estatura, double grasaCorp, double cintura, String desc_distrito, String desc_canton, String desc_provincia) {
         this.id_paciente = id_paciente;
-        this.nombreCompleto = primer_nombre +" "+segundo_nombre+""+apellido1+" "+apellido2;
+        this.nombreCompleto = primer_nombre +" "+segundo_nombre+" "+apellido1+" "+apellido2;
         this.telefono = telefono;
         this.correo = correo;
         this.cedula = cedula;

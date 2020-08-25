@@ -23,7 +23,7 @@ public class PacienteController extends Paciente implements Serializable {
         return PacienteGestion.mostrarListaCitas();
     }
     
-    public String edita(String id) {
+    public String edita(int id) {
         Paciente paciente = PacienteGestion.getPaciente(id);
         if (paciente != null) {
             this.setId_paciente(paciente.getId_paciente());
@@ -95,39 +95,39 @@ public class PacienteController extends Paciente implements Serializable {
         this.noImprimir = noImprimir;
     }
 
-    public void buscaPaciente(String id) {
-        if ("".equalsIgnoreCase(id)) {
-            noImprimir = true;
-        } else {
-            Paciente paciente = PacienteGestion.getPaciente(id);
-            if (paciente != null) {
-                this.setId_paciente(paciente.getId_paciente());
-            this.setPrimer_nombre(paciente.getPrimer_nombre());
-            this.setSegundo_nombre(paciente.getSegundo_nombre());
-            this.setApellido1(paciente.getApellido1());
-            this.setApellido2(paciente.getApellido2());
-            this.setTelefono(paciente.getTelefono());
-            this.setCorreo(paciente.getCorreo());
-            this.setCedula(paciente.getCedula());
-            this.setId_distrito(paciente.getId_distrito());
-            this.setId_canton(paciente.getId_canton());
-            this.setId_provincia(paciente.getId_provincia());
-            this.setFecha_nacimiento(paciente.getFecha_nacimiento());
-            this.setPeso(paciente.getPeso());
-            this.setEstatura(paciente.getEstatura());
-            this.setGrasaCorp(paciente.getGrasaCorp());
-            this.setCintura(paciente.getCintura());
-                noImprimir = false;
-            } else {
-                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
-                        "Posiblemente identificacion ya no exista");
-                FacesContext.getCurrentInstance()
-                        .addMessage("certificacionEstudianteForm:identificacion", msg);
-                noImprimir = true;
-
-            }
-
-        }
-
-    }
+//    public void buscaPaciente(int id) {
+//        if (id == null) {
+//            noImprimir = true;
+//        } else {
+//            Paciente paciente = PacienteGestion.getPaciente(id);
+//            if (paciente != null) {
+//                this.setId_paciente(paciente.getId_paciente());
+//            this.setPrimer_nombre(paciente.getPrimer_nombre());
+//            this.setSegundo_nombre(paciente.getSegundo_nombre());
+//            this.setApellido1(paciente.getApellido1());
+//            this.setApellido2(paciente.getApellido2());
+//            this.setTelefono(paciente.getTelefono());
+//            this.setCorreo(paciente.getCorreo());
+//            this.setCedula(paciente.getCedula());
+//            this.setId_distrito(paciente.getId_distrito());
+//            this.setId_canton(paciente.getId_canton());
+//            this.setId_provincia(paciente.getId_provincia());
+//            this.setFecha_nacimiento(paciente.getFecha_nacimiento());
+//            this.setPeso(paciente.getPeso());
+//            this.setEstatura(paciente.getEstatura());
+//            this.setGrasaCorp(paciente.getGrasaCorp());
+//            this.setCintura(paciente.getCintura());
+//                noImprimir = false;
+//            } else {
+//                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+//                        "Posiblemente identificacion ya no exista");
+//                FacesContext.getCurrentInstance()
+//                        .addMessage("certificacionEstudianteForm:identificacion", msg);
+//                noImprimir = true;
+//
+//            }
+//
+//        }
+//
+//    }
 }

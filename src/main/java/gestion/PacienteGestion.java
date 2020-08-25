@@ -46,11 +46,11 @@ public class PacienteGestion {
         return lista;
     }
     
-    public static Paciente getPaciente(String id) {
+    public static Paciente getPaciente(int id) {
         Paciente paciente = null;
         try {
             PreparedStatement consulta = Conexion.getConexion().prepareStatement(SQL_SELECT_PACIENTE);
-            consulta.setString(1, id);
+            consulta.setInt(1, id);
             ResultSet datos = consulta.executeQuery();
             while (datos != null && datos.next()) {
                 paciente = new Paciente(datos.getInt(1),/*id*/

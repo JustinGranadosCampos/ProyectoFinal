@@ -8,7 +8,7 @@ public class Cita {
     private Date hora_cita;
     private int id_paciente;
     private int id_distrito;
-    private int id_caton;
+    private int id_canton;
     private int id_provincia;
     private int localidad;
     private int id_usuario;
@@ -26,15 +26,15 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, int id_paciente, int id_distrito, int id_caton, int id_provincia, int localidad, int id_usuario, int id_rol, int id_servicio) {
+    public Cita(int cod_cita, Date fecha_cita, Date hora_cita, int id_paciente, int id_distrito, int id_caton, int id_provincia, String sede, int id_usuario, int id_rol, int id_servicio) {
         this.cod_cita = cod_cita;
         this.fecha_cita = fecha_cita;
         this.hora_cita = hora_cita;
         this.id_paciente = id_paciente;
         this.id_distrito = id_distrito;
-        this.id_caton = id_caton;
+        this.id_canton = id_caton;
         this.id_provincia = id_provincia;
-        this.localidad = localidad;
+        this.sede = sede;
         this.id_usuario = id_usuario;
         this.id_rol = id_rol;
         this.id_servicio = id_servicio;
@@ -93,12 +93,12 @@ public class Cita {
         this.id_distrito = id_distrito;
     }
 
-    public int getId_caton() {
-        return id_caton;
+    public int getId_canton() {
+        return id_canton;
     }
 
-    public void setId_caton(int id_caton) {
-        this.id_caton = id_caton;
+    public void setId_canton(int id_canton) {
+        this.id_canton = id_canton;
     }
 
     public int getId_provincia() {
