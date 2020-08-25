@@ -11,6 +11,10 @@ import model.Usuario2;
 public class UsuarioGestion2 {
 
     private static final String SQL_SELECT_V_USUARIO_SESION = "Select * from usuario_sesion where NOMBRE_USUARIO=?";
+    private static final String SQL_SELECT_USUARIOS = "";
+    private static final String SQL_INSERT_USUARIO = "INSERT INTO USUARIO_SISTEMA() VALUES()";
+    private static final String SQL_UPDATE_USUARIO = "UPDATE USUARIO_SISTEMA SET ";
+    private static final String SQL_DELETE_USUARIO = "DELETE FROM USUARIO_SISTEMA WHERE ID_USUARIO=?";
 
     public static Usuario2 valida(String nombreUsuario, String pwUsuario) {
         Usuario2 usuario2 = null;
