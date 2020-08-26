@@ -28,17 +28,20 @@
                             <b:navLink value="Gestionar Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cliente/cliente_gestion.xhtml"/>
                             <b:navLink value="Servicios a clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cliente/servicio_x_cliente_gestion.xhtml"/>
                         </b:dropMenu>
-                        <b:dropMenu value="Citas" icon-awesome="fa-group">
+                        <b:dropMenu value="Citas" icon-awesome="fa-newspaper-o">
                             <b:navLink value="Gestionar Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/cita/cita_gestion.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value="Servicios" icon-awesome="fa-group">
+                            <b:navLink value="Gestionar Servicios" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/respaldo/respaldo.xhtml"/>
                         </b:dropMenu>
                         <b:dropMenu value="Usuarios" icon-awesome="fa-group">
                             <b:navLink value="Gestionar Usuario" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
                         </b:dropMenu>
-                        <b:dropMenu value="Reportes" icon-awesome="fa-group">
+<!--                        <b:dropMenu value="Reportes" icon-awesome="fa-group">
                             <b:navLink value="Reporte Clientes" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
                             <b:navLink value="Reporte Citas" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
                             <b:navLink value="Reporte Usuarios" icon-awesome="fa-newspaper-o" href="/ProyectoF/faces/admin/usuario/usuario_gestion.xhtml"/>
-                        </b:dropMenu>
+                        </b:dropMenu>-->
                         <b:dropMenu value="Respaldos" icon-awesome="fa-group">
                             <b:navLink value="Estudiantes" icon-awesome="fa-print" href="/ProyectoF/faces/respaldo/respaldo.xhtml"/>
                         </b:dropMenu>
@@ -49,7 +52,7 @@
                         </b:dropMenu>-->
                         <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
                             <!--<b:navLink value="Perfil"  href="#"/>-->
-                            <b:commandLink value="Cerrar Sesion"  href="#{usuarioController.cerrarSesion()}"/>
+                            <b:navLink value="Cerrar Sesion"  href="#{usuarioController.cerrarSesion()}"/>
                         </b:dropMenu>
                     </b:navbarLinks>
                 </b:navBar>
