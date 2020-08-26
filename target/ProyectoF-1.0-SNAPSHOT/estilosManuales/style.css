@@ -20,6 +20,18 @@
     margin-right: 2.5em;
 }
 
+.nav-item:hover{
+    border-bottom: 2px solid var(--green-bg-color) !important;
+}
+
+.navbar{
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75);
+}
+
+.active{
+    border-bottom: 2px solid var(--green-bg-color) !important;
+}
+
 .menu a{
     font-size: 1.4em;
 }
@@ -43,7 +55,6 @@
 }
 
 .more-info-btn:hover{
-    /* display: block; */
     color: var(--orange-bg-color);
     padding: 2em;
     background: white;
@@ -91,7 +102,6 @@
 }
 
 .card-box-item{
-    /* display: flex; */
     height: 340px;
     width: 17em;
     background: white;
@@ -173,15 +183,14 @@
 }
 
 .btn-submit:hover{
-    /* display: block; */
     color: var(--orange-bg-color);
     background: white;
     border: 1px solid var(--orange-bg-color);
 }
 
 #map {
-    height: 25em;  /* The height is 400 pixels */
-    width: 100%;  /* The width is the width of the web page */
+    height: 25em;
+    width: 100%;
 }
 
 footer{
@@ -249,7 +258,6 @@ footer p{
 /* Admin */
 
 .menu-admin{
-    /* background: var(--orange-bg-color) !important; */
     display: flex;
     justify-content: end;
 }
@@ -316,18 +324,6 @@ footer p{
     padding-top: 0.4em;
     border-bottom: 7px solid var(--orange-bg-color);
 }
-
-/* .container-gestion select{
-    transition: all .6s;
-}
-
-.container-gestion input{
-    transition: all .6s;
-}
-
-.container-gestion select:hover,input:hover{
-    transform: scale(1.1);
-} */
 
 .panel-primary > .panel-heading{
     background: var(--green-bg-color);
