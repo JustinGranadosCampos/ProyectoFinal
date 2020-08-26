@@ -9,7 +9,7 @@ import model.Correo;
 @RequestScoped
 public class ClienteCorreoController {
     
-    private String recipient;
+    private static final String recipient = "justingranados34@gmail.com";
     private String subject;
     private String message;
     private String statusMessage = "";
@@ -25,13 +25,13 @@ public class ClienteCorreoController {
         this.message = message;
     }
 
-    public String getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
+//    public String getRecipient() {
+//        return recipient;
+//    }
+//
+//    public void setRecipient(String recipient) {
+//        this.recipient = recipient;
+//    }
 
     public String getSubject() {
         return subject;
@@ -53,6 +53,6 @@ public class ClienteCorreoController {
         catch(MessagingException ex) {
             statusMessage = ex.getMessage();
         }
-        return "index";  // redisplay page with status message
+        return "contacto?faces-redirect=true";  // redisplay page with status message
     }
 }

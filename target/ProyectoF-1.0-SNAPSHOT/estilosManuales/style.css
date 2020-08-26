@@ -330,7 +330,7 @@ footer p{
 } */
 
 .panel-primary > .panel-heading{
-    background: var(--orange-bg-color);
+    background: var(--green-bg-color);
 }
 
 .panel-primary{
@@ -340,12 +340,12 @@ footer p{
 }
 
 .btn-loginP{
-    background: var(--green-bg-color);
-    border: 1px solid var(--green-bg-color);
+    background: var(--orange-bg-color);
+    border: 1px solid var(--orange-bg-color);
 }
 
 .btn-loginP:hover{
-    color: var(--green-bg-color);
+    color: var(--orange-bg-color);
     background: #fff;
-    border: 1px solid var(--green-bg-color);
+    border: 1px solid var(--orange-bg-color);
 }

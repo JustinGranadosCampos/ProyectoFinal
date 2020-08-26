@@ -1,45 +1,92 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
     <h:head>
         <title>Contacto</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <style>
+            :root{
+                --orange-bg-color: #ff7019;
+                --green-bg-color: #83c33b;
+                --main-bg-color: #e6e9ee;
+            }
+            .panel-primary > .panel-heading{
+                background: var(--green-bg-color);
+            }
+
+            .panel-primary{
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                width: 80%;
+                margin: 1em auto 0 auto;
+            }
+
+            .btn-loginP{
+                background: var(--orange-bg-color);
+                border: 1px solid var(--orange-bg-color);
+            }
+
+            .btn-loginP:hover{
+                color: var(--orange-bg-color);
+                background: #fff;
+                border: 1px solid var(--orange-bg-color);
+            }
+        </style>
     </h:head>
     <h:body>
         <h:form>
-            <h:panelGrid columns="2">
+            <b:container fluid="true">
+                <b:panel title="Contacto" look="primary" class="panel-heading"
+                         style="margin-top: 2em">
+                    <b:row>
+                        <b:column medium-screen="3"></b:column>
+                        <b:column medium-screen="6">
+                            <h:panelGroup>
+                                <b:inputText size="30" id="subject"
+                                             placeholder="Asunto:"
+                                             value="#{clienteCorreoController.subject}"
+                                             required="true"
+                                             style="width: 100%; margin-top: 2em"
+                                             requiredMessage="Required"/>
+                                <h:message for="subject" style="color:red"/>
+                            </h:panelGroup>
+                        </b:column>
+                        <b:column medium-screen="3"></b:column>
+                    </b:row>
 
-                To:
-                <h:panelGroup>
-                    <h:inputText size="15" id="name"
-                                 value="#{clienteCorreoController.recipient}"
-                                 required="true"
-                                 requiredMessage="Required"/>
-                    <h:message for="name" style="color:red"/>
-                </h:panelGroup>
+                    <b:row>
+                        <b:column medium-screen="4"></b:column>
+                        <b:column medium-screen="4">
+                            <h:panelGroup>
+                                <h:inputTextarea a:placeholder="Mensaje" cols="45" rows="15" id="message"
+                                                 label="Mensaje"
+                                                 value="#{clienteCorreoController.message}"
+                                                 required="true"
+                                                 style="border: 1px solid gray"
+                                                 requiredMessage="Required"/>
+                                <h:message for="message" style="color:red"/>
+                            </h:panelGroup>
+                        </b:column>
+                        <b:column medium-screen="4"></b:column>
+                    </b:row>
 
-                Subject:
-                <h:panelGroup>
-                    <h:inputText size="30" id="subject"
-                                 value="#{clienteCorreoController.subject}"
-                                 required="true"
-                                 requiredMessage="Required"/>
-                    <h:message for="subject" style="color:red"/>
-                </h:panelGroup>
-
-                Message:
-                <h:panelGroup>
-                    <h:inputTextarea cols="45" rows="15" id="message"
-                                     value="#{clienteCorreoController.message}"
-                                     required="true"
-                                     requiredMessage="Required"/>
-                    <h:message for="message" style="color:red"/>
-                </h:panelGroup>
-
-                <h:commandButton value="Send" action="#{clienteCorreoController.send()}"/>
-                <h:outputText value="#{clienteCorreoController.statusMessage}" style="color:red"/>
-
-            </h:panelGrid>
+                    <b:row>
+                        <b:column medium-screen="5"></b:column>
+                        <b:column medium-screen="3">
+                            <b:commandButton value="Enviar"
+                                             look="primary"
+                                             class="btn-loginP"
+                                             style="width: 50%; margin-top: 2em;"
+                                             action="#{clienteCorreoController.send()}"/>
+                            <h:outputText value="#{clienteCorreoController.statusMessage}" style="color:red"/>
+                        </b:column>
+                        <b:column medium-screen="4"></b:column>
+                    </b:row>
+                </b:panel>
+            </b:container>
         </h:form>
     </h:body>
 </html>
