@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Usuarios</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./../../resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="editaUsuarioForm">
+                    <b:container fluid="true">
+                        <b:panel title="Usuarios" look="primary">
+                            <b:row tooltip="La identificacion no se modifica">
+                                <b:column medium-screen="2">
+                                    <h:outputLabel value="Identificacion" for="identificacion"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Identificacion"
+                                                 id="identificacion"
+                                                 value="#{usuarioSistemaController.id_usuario}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="identificacion"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Nombre:"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Nombre"
+                                                 id="nombre"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.nombreCompleto}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="nombre"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="ID ROL"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="ID ROL"
+                                                 id="idRol"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.id_rol}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="idRol"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Telefono"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Telefono"
+                                                 id="telefono"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.telefono}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="telefono"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Direccion"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Direccion"
+                                                 id="direccion"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.direccion}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="direccion"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Usuario"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Usuario"
+                                                 id="usuario"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.nombreUsuario}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="usuario"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Clave"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Clave"
+                                                 id="clave"
+                                                 required="true"
+                                                 autocomplete="false"
+                                                 value="#{usuarioSistemaController.pwUsuario}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="clave"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row>
+                                <b:column medium-screen="2"/>
+                                <b:column medium-screen="4">
+                                    <b:commandButton value="Ingresar"
+                                                     look="primary"
+                                                     style="width: 33%"
+                                                     action="#{usuarioSistemaController.inserta()}">                                        
+                                    </b:commandButton>
+                                    <b:commandButton value="Actualizar"
+                                                     look="success"
+                                                     style="width: 33%"
+                                                     action="#{usuarioSistemaController.modifica()}">                                        
+                                    </b:commandButton>
+                                    <b:commandButton value="Eliminar"
+                                                     look="danger"
+                                                     style="width: 33%"
+                                                     action="#{usuarioSistemaController.elimina()}">                                        
+                                    </b:commandButton>
+                                </b:column>
+                            </b:row>
+                        </b:panel>
+                    </b:container> 
+                </h:form>                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
