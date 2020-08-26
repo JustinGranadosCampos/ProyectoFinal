@@ -10,6 +10,7 @@
     <body>
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
+                <b:image library="img" name="/calendar-blog.png" style="height: 75px"/>
                 <h:form>
                     <b:dataTable value="#{citaController.citas}"
                                  var="cita"
