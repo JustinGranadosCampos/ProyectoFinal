@@ -13,29 +13,29 @@
                 <h:form id="editaUsuarioForm">
                     <b:container fluid="true">
                         <b:panel title="Servicios" look="primary">
-                            <b:row tooltip="La identificacion no se modifica">
+                            <b:row tooltip="La identificacion del servicio no se modifica, es auto incremental">
                                 <b:column medium-screen="2">
-                                    <h:outputLabel value="Identificacion" for="identificacion"/>
+                                    <h:outputLabel value="ID Servicio" for="idServicio"/>
                                 </b:column>
                                 <b:column medium-screen="4">
                                     <b:inputText placeholder="Identificacion"
-                                                 id="identificacion"
-                                                 value="#{usuarioSistemaController.id_usuario}"/>
+                                                 id="idServicio"
+                                                 value="#{servicioController.id_servicio}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="identificacion"/>
+                                    <b:message for="idServicio"/>
                                 </b:column>
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Nombre:"/>
+                                    <h:outputText value="Nombre del servicio:"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:inputText placeholder="Nombre"
+                                    <b:inputText placeholder="Nombre servicio"
                                                  id="nombre"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{usuarioSistemaController.nombreCompleto}"/>
+                                                 value="#{servicioController.desc_servicio}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
                                     <b:message for="nombre"/>
@@ -43,81 +43,33 @@
                             </b:row>
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="ID ROL"/>
+                                    <h:outputText value="Código de servicio"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:inputText placeholder="ID ROL"
-                                                 id="idRol"
+                                    <b:inputText placeholder="Código servicio"
+                                                 id="codServicio"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{usuarioSistemaController.id_rol}"/>
+                                                 value="#{servicioController.codigo_servicio}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="idRol"/>
+                                    <b:message for="codServicio"/>
                                 </b:column>
                             </b:row>
                             
                             <b:row>
                                 <b:column medium-screen="2">
-                                    <h:outputText value="Telefono"/>
+                                    <h:outputText value="Precio"/>
                                 </b:column>
                                 <b:column medium-screen="4">
-                                    <b:inputText placeholder="Telefono"
-                                                 id="telefono"
+                                    <b:inputText placeholder="Precio"
+                                                 id="precio"
                                                  required="true"
                                                  autocomplete="false"
-                                                 value="#{usuarioSistemaController.telefono}"/>
+                                                 value="#{servicioController.precio}"/>
                                 </b:column>
                                 <b:column medium-screen="6" style-class="message">
-                                    <b:message for="telefono"/>
-                                </b:column>
-                            </b:row>
-                            
-                            <b:row>
-                                <b:column medium-screen="2">
-                                    <h:outputText value="Direccion"/>
-                                </b:column>
-                                <b:column medium-screen="4">
-                                    <b:inputText placeholder="Direccion"
-                                                 id="direccion"
-                                                 required="true"
-                                                 autocomplete="false"
-                                                 value="#{usuarioSistemaController.direccion}"/>
-                                </b:column>
-                                <b:column medium-screen="6" style-class="message">
-                                    <b:message for="direccion"/>
-                                </b:column>
-                            </b:row>
-                            
-                            <b:row>
-                                <b:column medium-screen="2">
-                                    <h:outputText value="Usuario"/>
-                                </b:column>
-                                <b:column medium-screen="4">
-                                    <b:inputText placeholder="Usuario"
-                                                 id="usuario"
-                                                 required="true"
-                                                 autocomplete="false"
-                                                 value="#{usuarioSistemaController.nombreUsuario}"/>
-                                </b:column>
-                                <b:column medium-screen="6" style-class="message">
-                                    <b:message for="usuario"/>
-                                </b:column>
-                            </b:row>
-                            
-                            <b:row>
-                                <b:column medium-screen="2">
-                                    <h:outputText value="Clave"/>
-                                </b:column>
-                                <b:column medium-screen="4">
-                                    <b:inputText placeholder="Clave"
-                                                 id="clave"
-                                                 required="true"
-                                                 autocomplete="false"
-                                                 value="#{usuarioSistemaController.pwUsuario}"/>
-                                </b:column>
-                                <b:column medium-screen="6" style-class="message">
-                                    <b:message for="clave"/>
+                                    <b:message for="precio"/>
                                 </b:column>
                             </b:row>
                             
@@ -127,17 +79,17 @@
                                     <b:commandButton value="Ingresar"
                                                      look="primary"
                                                      style="width: 33%"
-                                                     action="#{usuarioSistemaController.inserta()}">                                        
+                                                     action="#{servicioController.inserta()}">                                        
                                     </b:commandButton>
                                     <b:commandButton value="Actualizar"
                                                      look="success"
                                                      style="width: 33%"
-                                                     action="#{usuarioSistemaController.modifica()}">                                        
+                                                     action="#{servicioController.modifica()}">                                        
                                     </b:commandButton>
                                     <b:commandButton value="Eliminar"
                                                      look="danger"
                                                      style="width: 33%"
-                                                     action="#{usuarioSistemaController.elimina()}">                                        
+                                                     action="#{servicioController.elimina()}">                                        
                                     </b:commandButton>
                                 </b:column>
                             </b:row>
