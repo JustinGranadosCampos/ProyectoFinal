@@ -80,7 +80,8 @@
                                              look="primary"
                                              class="btn-loginP"
                                              style="width: 50%; margin-top: 2em;"
-                                             action="#{clienteCorreoController.send()}"/>
+                                             action="#{clienteCorreoController.send()}"
+                                             onclick="mostrarMensaje()"/>
                             <h:outputText value="#{clienteCorreoController.statusMessage}" style="color:red"/>
                         </b:column>
                         <b:column medium-screen="4"></b:column>
@@ -88,6 +89,13 @@
                 </b:panel>
             </b:container>
         </h:form>
+        
+        <script type="text/javascript">
+            function mostrarMensaje()
+            {
+                setTimeout(() => {  alert("Datos enviados correctamente");; }, 8000);
+            }
+        </script>
     </h:body>
 </html>
 
