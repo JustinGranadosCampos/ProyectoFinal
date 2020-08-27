@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Solicitar - Cita</title>
+    </h:head>
+    <h:body>
+        <h:form id="editaCitaForm">
+            <b:container fluid="true">
+                <b:panel title="Citas" look="primary">
+                    <b:row tooltip="El código no se modifica">
+                        <b:column medium-screen="2">
+                            <h:outputLabel value="Código" for="codigo"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="Código"
+                                         id="codigo"
+                                         value="#{citaController.cod_cita}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="codigo"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="Fecha cita"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:datepicker 
+                                id="fechaCita"
+                                required="true"
+                                requiredMessage="Se requiere la F. de la cita"
+                                value="#{citaController.fecha_cita}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="fechaCita"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="Hora cita"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText 
+                                id="horaCita"
+                                required="true"
+                                requiredMessage="Se requiere la hora de la cita"
+                                value="#{citaController.hora_cita}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="horaCita"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Paciente"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID del paciente"
+                                         id="idPaciente"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_paciente}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idPaciente"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Distrito"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID del distrito"
+                                         id="idDistrito"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_distrito}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idDistrito"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Canton"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID del canton"
+                                         id="idCanton"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_canton}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idCanton"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Provincia"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID de provincia"
+                                         id="idProvincia"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_provincia}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idProvincia"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="Sede:"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="Sede"
+                                         id="sede"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.sede}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="sede"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Usuario"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID de usuario"
+                                         id="idUsuario"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_usuario}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idUsuario"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Rol"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID del rol"
+                                         id="idRol"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_rol}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idRol"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2">
+                            <h:outputText value="ID Servicio"/>
+                        </b:column>
+                        <b:column medium-screen="4">
+                            <b:inputText placeholder="ID de servicio"
+                                         id="idServicio"
+                                         required="true"
+                                         autocomplete="false"
+                                         value="#{citaController.id_servicio}"/>
+                        </b:column>
+                        <b:column medium-screen="6" style-class="message">
+                            <b:message for="idServicio"/>
+                        </b:column>
+                    </b:row>
+
+                    <b:row>
+                        <b:column medium-screen="2"/>
+                        <b:column medium-screen="4">
+                            <b:commandButton value="Ingresar"
+                                             look="primary"
+                                             style="width: 30%; margin-left: 2%"
+                                             action="#{citaController.inserta()}">                                        
+                            </b:commandButton>
+                            <b:commandButton value="Actualizar"
+                                             look="success"
+                                             style="width: 30%"
+                                             action="#{citaController.modifica()}">                                        
+                            </b:commandButton>
+                            <b:commandButton value="Eliminar"
+                                             look="danger"
+                                             style="width: 30%; margin-right: 2%"
+                                             action="#{citaController.elimina()}">                                        
+                            </b:commandButton>
+                        </b:column>
+                    </b:row>
+                </b:panel>
+            </b:container> 
+        </h:form>
+    </h:body>
+</html>
