@@ -1,6 +1,6 @@
 package model;
 
-public class Servicio_x_Paciente {
+public class ServicioPaciente {
     private int id;
     private char recurrente;
     private int id_pacient;
@@ -9,10 +9,10 @@ public class Servicio_x_Paciente {
     private int id_provincia;
     private int id_servicio;
 
-    public Servicio_x_Paciente() {
+    public ServicioPaciente() {
     }
 
-    public Servicio_x_Paciente(int id, char recurrente, int id_pacient, int id_distrito, int id_canton, int id_provincia, int id_servicio) {
+    public ServicioPaciente(int id, char recurrente, int id_pacient, int id_distrito, int id_canton, int id_provincia, int id_servicio) {
         this.id = id;
         this.recurrente = recurrente;
         this.id_pacient = id_pacient;

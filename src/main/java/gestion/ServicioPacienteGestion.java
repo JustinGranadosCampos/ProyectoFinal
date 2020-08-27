@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Conexion;
-import model.Servicio_x_Paciente;
+import model.ServicioPaciente;
 
 public class ServicioPacienteGestion {
     private static final String SQL_SELECT_SERVICIOS_X_CLIENTES = "SELECT * FROM servicios_x_paciente";
@@ -16,13 +16,13 @@ public class ServicioPacienteGestion {
     private static final String SQL_INSERT_SERVICIO_X_CLIENTE = "INSERT INTO servicios_x_paciente(RECURRENTE,ID_PACIENTE,ID_DISTRITO,ID_CANTON,ID_PROVINCIA,ID_SERVICIO) VALUES(?,?,?,?,?,?)";
     private static final String SQL_DELETE_SERVICIO_X_CLIENTE = "DELETE FROM servicios_x_paciente WHERE ID=?";
     
-    public static ArrayList<Servicio_x_Paciente> getServiciosPacientes() {
-        ArrayList<Servicio_x_Paciente> lista = new ArrayList<>();
+    public static ArrayList<ServicioPaciente> getServiciosPacientes() {
+        ArrayList<ServicioPaciente> lista = new ArrayList<>();
         try {
             PreparedStatement consulta = Conexion.getConexion().prepareStatement(SQL_SELECT_SERVICIOS_X_CLIENTES);
             ResultSet datos = consulta.executeQuery();
             while (datos != null && datos.next()) {
-                lista.add(new Servicio_x_Paciente(
+                lista.add(new ServicioPaciente(
                         datos.getInt(1),/*id*/
                         datos.getString(2).charAt(0),/*recurrente*/
                         datos.getInt(3),/*id_paciente*/
@@ -38,14 +38,14 @@ public class ServicioPacienteGestion {
         return lista;
     }
     
-    public static Servicio_x_Paciente getServicioPaciente(int id) {
-        Servicio_x_Paciente sxp = null;
+    public static ServicioPaciente getServicioPaciente(int id) {
+        ServicioPaciente sxp = null;
         try {
             PreparedStatement consulta = Conexion.getConexion().prepareStatement(SQL_SELECT_SERVICIO_X_CLIENTE);
             consulta.setInt(1, id);
             ResultSet datos = consulta.executeQuery();
             while (datos != null && datos.next()) {
-                sxp = new Servicio_x_Paciente(
+                sxp = new ServicioPaciente(
                         datos.getInt(1),/*id*/
                         datos.getString(2).charAt(0),/*recurrente*/
                         datos.getInt(3),/*id_paciente*/
@@ -62,7 +62,7 @@ public class ServicioPacienteGestion {
         return sxp;
     }
     
-    public static boolean insertar(Servicio_x_Paciente sxp) {
+    public static boolean insertar(ServicioPaciente sxp) {
         try {
             PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_INSERT_SERVICIO_X_CLIENTE);
             sentencia.setString(1, "" + sxp.getRecurrente());
@@ -79,7 +79,7 @@ public class ServicioPacienteGestion {
         return false;
     }
 
-    public static boolean modificar(Servicio_x_Paciente sxp) {
+    public static boolean modificar(ServicioPaciente sxp) {
         try {
             PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_UPDATE_SERVICIO_X_CLIENTE);
             sentencia.setString(1, "" + sxp.getRecurrente());
@@ -97,7 +97,7 @@ public class ServicioPacienteGestion {
         return false;
     }
 
-    public static boolean eliminar(Servicio_x_Paciente sxp) {
+    public static boolean eliminar(ServicioPaciente sxp) {
         try {
             PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_DELETE_SERVICIO_X_CLIENTE);
             sentencia.setInt(1, sxp.getId());

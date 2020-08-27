@@ -7,21 +7,21 @@ import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import model.Servicio_x_Paciente;
+import model.ServicioPaciente;
 
 @Named(value = "servicioPacienteController")
 @RequestScoped
-public class ServicioPacienteController extends Servicio_x_Paciente implements Serializable{
+public class ServicioPacienteController extends ServicioPaciente implements Serializable{
 
     public ServicioPacienteController() {
     }
     
-    public List<Servicio_x_Paciente> getServiciosPacientes() {
+    public List<ServicioPaciente> getServiciosPacientes() {
         return ServicioPacienteGestion.getServiciosPacientes();
     }
     
     public String edita(int id) {/*Boton de editar*/
-        Servicio_x_Paciente sxp = ServicioPacienteGestion.getServicioPaciente(id);
+        ServicioPaciente sxp = ServicioPacienteGestion.getServicioPaciente(id);
         if (sxp != null) {
             this.setId(sxp.getId());
             this.setRecurrente(sxp.getRecurrente());
