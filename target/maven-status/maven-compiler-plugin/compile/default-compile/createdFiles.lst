@@ -36,6 +36,7 @@ dashboard\ChartMeterGaugeView2$1.class
 com\sc403\sistemaj\resources\JavaEE8Resource.class
 dashboard\ChartMeterGaugeView1.class
 gestion\ProspectoGestion.class
+.netbeans_automatic_build
 controller\ClienteCorreoController.class
 dashboard\ChartOhlcView2.class
 dashboard\ChartPieView2.class
