@@ -9,14 +9,14 @@ import java.util.logging.Logger;
 import model.Conexion;
 import model.Servicio_x_Paciente;
 
-public class Servicios_x_ClienteGestion {
+public class Servicio_x_PacienteGestion {
     private static final String SQL_SELECT_SERVICIOS_X_CLIENTES = "SELECT * FROM servicios_x_paciente";
     private static final String SQL_SELECT_SERVICIO_X_CLIENTE = "SELECT * FROM servicios_x_paciente WHERE ID=?";
     private static final String SQL_UPDATE_SERVICIO_X_CLIENTE = "UPDATE servicios_x_paciente SET RECURRENTE=?,ID_PACIENTE=?,ID_DISTRITO=?,ID_CANTON=?,ID_PROVINCIA=?,ID_SERVICIO=? WHERE ID=?";
     private static final String SQL_INSERT_SERVICIO_X_CLIENTE = "INSERT INTO servicios_x_paciente(RECURRENTE,ID_PACIENTE,ID_DISTRITO,ID_CANTON,ID_PROVINCIA,ID_SERVICIO) VALUES(?,?,?,?,?,?)";
     private static final String SQL_DELETE_SERVICIO_X_CLIENTE = "DELETE FROM servicios_x_paciente WHERE ID=?";
     
-    public static ArrayList<Servicio_x_Paciente> getCitas() {
+    public static ArrayList<Servicio_x_Paciente> getServiciosPacientes() {
         ArrayList<Servicio_x_Paciente> lista = new ArrayList<>();
         try {
             PreparedStatement consulta = Conexion.getConexion().prepareStatement(SQL_SELECT_SERVICIOS_X_CLIENTES);
@@ -33,12 +33,12 @@ public class Servicios_x_ClienteGestion {
                 ));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Servicios_x_ClienteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servicio_x_PacienteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return lista;
     }
     
-    public static Servicio_x_Paciente getCita(int id) {
+    public static Servicio_x_Paciente getServicioPaciente(int id) {
         Servicio_x_Paciente sxp = null;
         try {
             PreparedStatement consulta = Conexion.getConexion().prepareStatement(SQL_SELECT_SERVICIO_X_CLIENTE);
@@ -56,7 +56,7 @@ public class Servicios_x_ClienteGestion {
                 );
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Servicios_x_ClienteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servicio_x_PacienteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return sxp;
@@ -74,7 +74,7 @@ public class Servicios_x_ClienteGestion {
             return sentencia.executeUpdate() > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(Servicios_x_ClienteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servicio_x_PacienteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -92,7 +92,7 @@ public class Servicios_x_ClienteGestion {
             return sentencia.executeUpdate() > 0;
 
         } catch (SQLException ex) {
-            Logger.getLogger(Servicios_x_ClienteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servicio_x_PacienteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -103,7 +103,7 @@ public class Servicios_x_ClienteGestion {
             sentencia.setInt(1, sxp.getId());
             return sentencia.executeUpdate() > 0;
         } catch (SQLException ex) {
-            Logger.getLogger(Servicios_x_ClienteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servicio_x_PacienteGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
