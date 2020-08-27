@@ -11,6 +11,7 @@ dashboard\ChartMeterGaugeView1$1.class
 dashboard\ChartLivePieView.class
 dashboard\ChartBubbleView2.class
 gestion\CitaGestion.class
+model\Servicio.class
 controller\TemaController.class
 dashboard\ChartZoomView.class
 controller\PacienteController.class
@@ -26,6 +27,7 @@ dashboard\ChartBarView.class
 gestion\UsuarioGestion2.class
 model\Usuario.class
 controller\CitaController.class
+controller\ServicioController.class
 dashboard\ChartDonutView1.class
 model\Correo.class
 dashboard\ChartMeterGaugeView2$1.class
@@ -41,6 +43,7 @@ model\YearGender.class
 com\sc403\sistemaj\JAXRSConfiguration.class
 model\Paciente.class
 dashboard\ChartLineView2.class
+gestion\ServicioGestion.class
 dashboard\ChartOhlcView1.class
 controller\EstudianteController.class
 dashboard\ChartDateView.class

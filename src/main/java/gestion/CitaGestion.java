@@ -27,7 +27,7 @@ public class CitaGestion {
                 lista.add(new Cita(
                         datos.getInt(1),/*cod_cita*/
                         datos.getDate(2),/*fecha*/
-                        datos.getDate(3),/*hora*/
+                        datos.getString(3),/*hora*/
                         datos.getString(4),/*sede*/
                         datos.getString(5),/*cedula*/
                         datos.getString(6),/*nombreP*/
@@ -52,7 +52,7 @@ public class CitaGestion {
                 lista.add(new Cita(
                         datos.getInt(1),/*cod_cita*/
                         datos.getDate(2),/*fecha*/
-                        datos.getDate(3),/*hora*/
+                        datos.getString(3),/*hora*/
                         datos.getInt(4),/*ID paciente*/
                         datos.getInt(5), /*ID distrito*/
                         datos.getInt(6),/*canton*/
@@ -79,7 +79,7 @@ public class CitaGestion {
                 cita = new Cita(
                         datos.getInt(1),/*cod_cita*/
                         datos.getDate(2),/*fecha*/
-                        datos.getDate(3),/*hora*/
+                        datos.getString(3),/*hora*/
                         datos.getInt(4),/*sede*/
                         datos.getInt(5),
                         datos.getInt(6),/*cedula*/
@@ -101,7 +101,7 @@ public class CitaGestion {
         try {
             PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_INSERT_CITA);
             sentencia.setObject(1, cita.getFecha_cita());
-            sentencia.setObject(2, cita.getHora_cita());
+            sentencia.setString(2, cita.getHora_cita());
             sentencia.setInt(3, cita.getId_paciente());
             sentencia.setInt(4, cita.getId_distrito());
             sentencia.setInt(5, cita.getId_canton());
@@ -122,7 +122,7 @@ public class CitaGestion {
         try {
             PreparedStatement sentencia = Conexion.getConexion().prepareStatement(SQL_UPDATE_CITA);
             sentencia.setObject(1, cita.getFecha_cita());
-            sentencia.setObject(2, cita.getHora_cita());
+            sentencia.setString(2, cita.getHora_cita());
             sentencia.setInt(3, cita.getId_paciente());
             sentencia.setInt(4, cita.getId_distrito());
             sentencia.setInt(5, cita.getId_canton());
