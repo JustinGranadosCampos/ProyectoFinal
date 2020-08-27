@@ -9,7 +9,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import model.Servicio_x_Paciente;
 
-@Named(value = "servicio_x_ClienteController")
+@Named(value = "servicioClienteController")
 @RequestScoped
 public class ServicioClienteController extends Servicio_x_Paciente implements Serializable {
 

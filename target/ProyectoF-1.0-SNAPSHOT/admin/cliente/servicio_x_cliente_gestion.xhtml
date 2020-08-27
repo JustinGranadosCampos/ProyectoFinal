@@ -11,7 +11,7 @@
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
                 <h:form id="editaServicioForm">
-                    <b:dataTable value="#{servicioController.servicios}"
+                    <b:dataTable value="#{servicioPacienteController.serviciosPacientes()}"
                                  var="servicio"
                                  excel="true"
                                  pdf="true"
@@ -19,23 +19,32 @@
                                  print="true"
                                  copy="true"
                                  columnVisibility="true">
+                        <b:dataTableColumn value="#{servicio.id}"
+                                           label="ID"
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{servicio.recurrente}"
+                                           label="Servicio Recurrente"
+                                           width="20%"/>
+                        <b:dataTableColumn value="#{servicio.id_pacient}"
+                                           label="ID Paciente"
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{servicio.id_distrito}"
+                                           label="ID Distrito"
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{servicio.id_canton}"
+                                           label="ID Canton"
+                                           width="10%"/>
+                        <b:dataTableColumn value="#{servicio.id_provincia}"
+                                           label="ID Provincia"
+                                           width="10%"/>
                         <b:dataTableColumn value="#{servicio.id_servicio}"
                                            label="ID Servicio"
-                                           width="20%"/>
-                        <b:dataTableColumn value="#{servicio.desc_servicio}"
-                                           label="Nombre de servicio"
-                                           width="30%"/>
-                        <b:dataTableColumn value="#{servicio.codigo_servicio}"
-                                           label="Código de servicio"
-                                           width="20%"/>
-                        <b:dataTableColumn value="#{servicio.precio}"
-                                           label="Precio"
                                            width="20%"/>
                         <b:dataTableColumn style="text-align: center"
                                            width="10%"
                                            label="Accion">
                             <b:commandButton value="Editar"
-                                             action="#{servicioController.edita(servicio.id_servicio)}"/>
+                                             action="#{servicioPacienteController.edita(servicio.id)}"/>
 
                         </b:dataTableColumn>
                     </b:dataTable>

@@ -63,6 +63,8 @@ public class Paciente {
         this.desc_canton = desc_canton;
         this.desc_provincia = desc_provincia;
     }
+    
+    
 
     public int getId_paciente() {
         return id_paciente;

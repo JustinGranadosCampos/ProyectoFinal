@@ -44,6 +44,7 @@ gestion\PacienteGestion.class
 model\YearGender.class
 com\sc403\sistemaj\JAXRSConfiguration.class
 model\Paciente.class
+controller\ServicioPacienteController.class
 dashboard\ChartLineView2.class
 gestion\ServicioGestion.class
 dashboard\ChartOhlcView1.class

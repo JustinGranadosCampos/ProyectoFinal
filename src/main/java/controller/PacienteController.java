@@ -20,7 +20,7 @@ public class PacienteController extends Paciente implements Serializable {
     }
     
     public List<Paciente> mostrarPacientes(){
-        return PacienteGestion.mostrarListaCitas();
+        return PacienteGestion.ListaCitas();
     }
     
     public String edita(int id) {
@@ -42,7 +42,7 @@ public class PacienteController extends Paciente implements Serializable {
             this.setEstatura(paciente.getEstatura());
             this.setGrasaCorp(paciente.getGrasaCorp());
             this.setCintura(paciente.getCintura());
-            return "http://localhost:8080/ProyectoF/faces/admin/cliente/edita.xhtml";
+            return "edita.xhtml";
         } else {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
                     "Posiblemente identificacion ya no exista");
