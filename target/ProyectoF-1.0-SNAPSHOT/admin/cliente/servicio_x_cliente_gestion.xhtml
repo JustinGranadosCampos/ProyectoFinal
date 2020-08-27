@@ -5,47 +5,37 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
-        <title>Gestión de servicio por cliente</title>
+        <title>Gestión - Servicio por Cliente</title>
     </h:head>
     <body>
         <ui:composition template="./../../resources/templates/plantilla.xhtml">
             <ui:define name="content">
-                <h:form>
-                    <b:dataTable value="#{estudianteController.estudiantes}"
-                                 var="estudiante"
+                <h:form id="editaServicioForm">
+                    <b:dataTable value="#{servicioController.servicios}"
+                                 var="servicio"
                                  excel="true"
                                  pdf="true"
                                  csv="true"
                                  print="true"
                                  copy="true"
                                  columnVisibility="true">
-                        <b:dataTableColumn value="#{estudiante.id}"
-                                           label="identificación"
-                                           width="9%"/>
-                        <b:dataTableColumn value="#{estudiante.nombre}"
-                                           label="Nombre"
-                                           width="15%"/>
-                        <b:dataTableColumn value="#{estudiante.apellido1}"
-                                           label="Primer Apellido"
-                                           width="19%"/>
-                        <b:dataTableColumn value="#{estudiante.apellido2}"
-                                           label="Segundo Apellido"
-                                           width="19%"/>
-                        <b:dataTableColumn value="#{estudiante.fechaNaci}"
-                                           label="F. Nacimiento"
-                                           width="10%"/>
-                        <b:dataTableColumn value="#{estudiante.fechaIngr}"
-                                           label="F. Ingreso"
-                                           width="10%"/>
-                        <b:dataTableColumn style="text-align: center"
-                                           value="#{estudiante.genero}"
-                                           width="8%"
-                                           label="Género"/>
+                        <b:dataTableColumn value="#{servicio.id_servicio}"
+                                           label="ID Servicio"
+                                           width="20%"/>
+                        <b:dataTableColumn value="#{servicio.desc_servicio}"
+                                           label="Nombre de servicio"
+                                           width="30%"/>
+                        <b:dataTableColumn value="#{servicio.codigo_servicio}"
+                                           label="Código de servicio"
+                                           width="20%"/>
+                        <b:dataTableColumn value="#{servicio.precio}"
+                                           label="Precio"
+                                           width="20%"/>
                         <b:dataTableColumn style="text-align: center"
                                            width="10%"
                                            label="Accion">
                             <b:commandButton value="Editar"
-                                             action="#{estudianteController.edita(estudiante.id)}"/>
+                                             action="#{servicioController.edita(servicio.id_servicio)}"/>
 
                         </b:dataTableColumn>
                     </b:dataTable>

@@ -3,6 +3,7 @@ dashboard\ChartLinelView1.class
 gestion\UsuarioGestion.class
 controller\ReporteController.class
 model\Usuario2.class
+controller\ServicioClienteController.class
 controller\UsuarioController.class
 controller\ProspectoController.class
 dashboard\ChartAnimatedView1.class
@@ -11,6 +12,7 @@ dashboard\ChartMeterGaugeView1$1.class
 dashboard\ChartLivePieView.class
 dashboard\ChartBubbleView2.class
 gestion\CitaGestion.class
+model\Servicio_x_Paciente.class
 model\Servicio.class
 controller\TemaController.class
 dashboard\ChartZoomView.class
@@ -49,4 +51,5 @@ controller\EstudianteController.class
 dashboard\ChartDateView.class
 dashboard\ChartDonuView2.class
 model\Conexion.class
+gestion\ServicioPacienteGestion.class
 dashboard\ChartBarHorizonalView.class
