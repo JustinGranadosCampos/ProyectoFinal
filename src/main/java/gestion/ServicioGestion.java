@@ -134,7 +134,7 @@ public class ServicioGestion {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(EstudianteGestion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServicioGestion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return tiraJson;
     }

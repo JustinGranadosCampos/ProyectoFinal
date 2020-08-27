@@ -110,14 +110,14 @@ public class ServicioController extends Servicio implements Serializable  {
             sos.flush();
             FacesContext.getCurrentInstance().getResponseComplete();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServicioController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServicioController.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 out.close();
             } catch (IOException ex) {
-                Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServicioController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Conexion;
-import model.Usuario;
 import model.Usuario2;
 
 public class UsuarioGestion2 {
