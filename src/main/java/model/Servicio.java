@@ -47,4 +47,8 @@ public class Servicio {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    public Object getFechaNaci() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

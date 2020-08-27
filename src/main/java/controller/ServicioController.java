@@ -1,12 +1,23 @@
 package controller;
 
 import gestion.ServicioGestion;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import model.Servicio;
 
 @Named(value = "servicioController")
@@ -67,5 +78,48 @@ public class ServicioController extends Servicio implements Serializable  {
             FacesContext.getCurrentInstance().addMessage("editaServicioForm:codigo", msg);
             return "edita.xhtml";
         }
+    }
+    
+    public void respaldo() {
+        ZipOutputStream out = null;
+        try {
+            String json = ServicioGestion.generarJson();
+            File f = new File(FacesContext.getCurrentInstance()
+                    .getExternalContext().
+                    getRealPath("/respaldo") + "servicios.zip");
+            out = new ZipOutputStream(new FileOutputStream(f));
+            ZipEntry e = new ZipEntry("servicios.json");
+            out.putNextEntry(e);
+            byte[] data = json.getBytes();
+            out.write(data, 0, data.length);
+            out.closeEntry();
+            out.close();
+            File zipPath = new File(FacesContext.getCurrentInstance()
+                    .getExternalContext().
+                    getRealPath("/respaldo") + "servicios.zip");
+            byte[] zip = Files.readAllBytes(zipPath.toPath());
+
+            HttpServletResponse respuesta
+                    = (HttpServletResponse) FacesContext.getCurrentInstance()
+                            .getExternalContext().getResponse();
+            ServletOutputStream sos = respuesta.getOutputStream();
+            respuesta.setContentType("application/7zip");
+            respuesta.setHeader("Content-disposition",
+                    "attachment; filename=servicios.zip");
+            sos.write(zip);
+            sos.flush();
+            FacesContext.getCurrentInstance().getResponseComplete();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                out.close();
+            } catch (IOException ex) {
+                Logger.getLogger(EstudianteController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
     }
 }
