@@ -9,7 +9,7 @@ import model.Correo;
 @RequestScoped
 public class ClienteCorreoController {
     
-    private static final String recipient = "justingranados34@gmail.com";
+    private static final String recipient = "";
     private String subject;
     private String message;
     private String statusMessage = "";
