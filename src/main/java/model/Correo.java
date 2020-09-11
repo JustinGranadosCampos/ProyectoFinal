@@ -11,9 +11,9 @@ public class Correo {
     private static Session mailSession;
     private static final String HOST = "smtp.gmail.com";
     private static final int PORT = 465;
-    private static final String USER = "jjgc1497@gmail.com";     // Must be valid user in d.umn.edu domain, e.g. "smit0012"
-    private static final String PASSWORD = "qwhvxiijifrcqwcz"; // Must be valid password for smit0012
-    private static final String FROM = "jjgc1497@gmail.com";     // Full info for user, e.g. "Fred Smith <smit0012@d.umn.edu>"
+    private static final String USER = "";     // Must be valid user in d.umn.edu domain, e.g. "smit0012"
+    private static final String PASSWORD = ""; // Must be valid password for smit0012
+    private static final String FROM = "";     // Full info for user, e.g. "Fred Smith <smit0012@d.umn.edu>"
     
     public static void sendMessage(String recipient, String subject, String message) throws MessagingException {
 
